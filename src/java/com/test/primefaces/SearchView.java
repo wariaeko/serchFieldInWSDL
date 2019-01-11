@@ -29,6 +29,7 @@ public class SearchView {
     private String text1;
     private String text2;
     static boolean emptyFlag = true;
+    static boolean meettedFlag = false;
     static String currentStep = "";
     static boolean checkContextFlag = false;
 
@@ -115,7 +116,8 @@ public class SearchView {
                     }
                     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("File Name : " + fileName + " === Method : " + operation.getName() + "\n"));
                     emptyFlag = false;
-                    return;
+                    meettedFlag = true;
+                    break;
                 } else if (!element.getType().toString().contains("}string")
                         && !element.getType().toString().contains("}int")
                         && !element.getType().toString().contains("}double")
@@ -132,7 +134,10 @@ public class SearchView {
                     checkContextFlag = true;
                     recheckStepCheckContextType(allComplexType, fieldNameForSearch, operation, fileName);
                 }
-
+                if (meettedFlag) {
+                    meettedFlag = false;
+                    break;
+                }
             }
         } else if (allComplexType.get(currentStep).getModel() != null) {
             ComplexContent complexContent = (ComplexContent) allComplexType.get(currentStep).getModel();
@@ -148,7 +153,8 @@ public class SearchView {
                     }
                     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("File Name : " + fileName + " === Method : " + operation.getName() + "\n"));
                     emptyFlag = false;
-                    return;
+                    meettedFlag = true;
+                    break;
                 } else if (!element.getType().toString().contains("}string")
                         && !element.getType().toString().contains("}int")
                         && !element.getType().toString().contains("}double")
@@ -162,9 +168,13 @@ public class SearchView {
                     String[] splitType = element.getType().toString().split("}");
                     currentStep = splitType[1];
 
+                    checkContextFlag = true;
                     recheckStepCheckContextType(allComplexType, fieldNameForSearch, operation, fileName);
                 }
-
+                if (meettedFlag) {
+                    meettedFlag = false;
+                    break;
+                }
             }
 
         }
