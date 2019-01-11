@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax220="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:ax222="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax219="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax224="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax225="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getTrueCardGradingInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTrueCardGradingInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:TrueCardGradingInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastCustomerInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax220:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastCustomerInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:CustomerInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax220:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:CustomerListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="customerId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:CustomerInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveCustomerList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax220:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveCustomerListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:CustomerListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountListByCustomer">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountListByCustomerResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:AccountInfoListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:AccountInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountCustomerInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAccountCustomerInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax224:AccountCustomerInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax226="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="TrueCardGradingInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="banId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="gradingCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax220:AddressInfo"/>
+                    <xs:element minOccurs="0" name="billCycleInfo" nillable="true" type="ax222:CustomerBillCycleInfo"/>
+                    <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateExpirationDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="certificateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax220:ContactInfo"/>
+                    <xs:element minOccurs="0" name="contactLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerGrading" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerType" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="dealer" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="educationLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="income" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="job" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="largeCustomerIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="marketingChannel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax220:NameInfo"/>
+                    <xs:element minOccurs="0" name="nationality" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="occupation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerCurrency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="periodOfWork" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personal" nillable="true" type="ax220:PersonalInfo"/>
+                    <xs:element minOccurs="0" name="registerDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="taxExemptionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="timeInBusiness" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalProduct" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="trueCardGrading" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerBillCycleInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="changeCycleIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="changeCycleReqeustDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="changeCycleRequestStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="newBillCycle" nillable="true" type="xs:short"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerInfoArray" nillable="true" type="ax222:CustomerInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="accountInfoArray" nillable="true" type="ax222:AccountInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountCollection" nillable="true" type="ax222:AccountCollectionInfo"/>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="accountPriority" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="accountSubType" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax220:AddressInfo"/>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="arBalance" type="xs:double"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="ax222:BenInfo"/>
+                    <xs:element minOccurs="0" name="branchNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax220:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="company" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax220:ContactInfo"/>
+                    <xs:element minOccurs="0" name="convergenceCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimit" nillable="true" type="ax222:AccountCreditLimitInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax220:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="delinquent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="initiationReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="legacyBan" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax220:NameInfo"/>
+                    <xs:element minOccurs="0" name="openDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="parentBan" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="withholdingTaxIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="withholdingTaxUpdateDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCollectionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="collectionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fullSuspensionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="punishmentLevels" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="suspensionReason" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BenInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bcBanId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billMedia" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="consolidateIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax220:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCreditLimitInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="obligationCalculationFormula" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personalCreditLimit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="temporaryCreditLimit" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax220:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AddressInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="addressLine1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="building" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="district" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="houseNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="moo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="roomNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sinceDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="soi" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="street" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subDistrict" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContactInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="homePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="officePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="officePhoneExt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferredContactNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="privatePhone" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NameInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="branchName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="middleName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nameType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="organizationName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="storeId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tilte" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PersonalInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accommodation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maritalStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maritalStatusDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StatusReasonInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="lastActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="reasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax221="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax223="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="TrueCardGradingInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="trueCardGradingInfo" nillable="true" type="ax222:TrueCardGradingInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CustomerInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="customer" nillable="true" type="ax222:CustomerInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CustomerListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="customerList" nillable="true" type="ax222:CustomerList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AccountInfoListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="accountList" nillable="true" type="ax222:AccountList"/>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AccountInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="account" nillable="true" type="ax222:AccountInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AccountCustomerInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax220:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="account" nillable="true" type="ax222:AccountInfo"/>
+                            <xs:element minOccurs="0" name="customer" nillable="true" type="ax222:CustomerInfo"/>
+                            <xs:element minOccurs="0" name="withholdingTaxRate" nillable="true" type="xs:double"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getAccountCustomerInfoRequest">
+        <wsdl:part name="parameters" element="ns:getAccountCustomerInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountCustomerInfoResponse">
+        <wsdl:part name="parameters" element="ns:getAccountCustomerInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountListByCustomerRequest">
+        <wsdl:part name="parameters" element="ns:getAccountListByCustomer"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountListByCustomerResponse">
+        <wsdl:part name="parameters" element="ns:getAccountListByCustomerResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTrueCardGradingInfoRequest">
+        <wsdl:part name="parameters" element="ns:getTrueCardGradingInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getTrueCardGradingInfoResponse">
+        <wsdl:part name="parameters" element="ns:getTrueCardGradingInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountInfoRequest">
+        <wsdl:part name="parameters" element="ns:getAccountInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAccountInfoResponse">
+        <wsdl:part name="parameters" element="ns:getAccountInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLastCustomerInfoRequest">
+        <wsdl:part name="parameters" element="ns:getLastCustomerInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getLastCustomerInfoResponse">
+        <wsdl:part name="parameters" element="ns:getLastCustomerInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerInfoRequest">
+        <wsdl:part name="parameters" element="ns:getCustomerInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerInfoResponse">
+        <wsdl:part name="parameters" element="ns:getCustomerInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveCustomerListRequest">
+        <wsdl:part name="parameters" element="ns:getActiveCustomerList"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveCustomerListResponse">
+        <wsdl:part name="parameters" element="ns:getActiveCustomerListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerListRequest">
+        <wsdl:part name="parameters" element="ns:getCustomerList"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerListResponse">
+        <wsdl:part name="parameters" element="ns:getCustomerListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CustomerInfoPSPortType">
+        <wsdl:operation name="getAccountCustomerInfo">
+            <wsdl:input message="ns:getAccountCustomerInfoRequest" wsaw:Action="urn:getAccountCustomerInfo"/>
+            <wsdl:output message="ns:getAccountCustomerInfoResponse" wsaw:Action="urn:getAccountCustomerInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountListByCustomer">
+            <wsdl:input message="ns:getAccountListByCustomerRequest" wsaw:Action="urn:getAccountListByCustomer"/>
+            <wsdl:output message="ns:getAccountListByCustomerResponse" wsaw:Action="urn:getAccountListByCustomerResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTrueCardGradingInfo">
+            <wsdl:input message="ns:getTrueCardGradingInfoRequest" wsaw:Action="urn:getTrueCardGradingInfo"/>
+            <wsdl:output message="ns:getTrueCardGradingInfoResponse" wsaw:Action="urn:getTrueCardGradingInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountInfo">
+            <wsdl:input message="ns:getAccountInfoRequest" wsaw:Action="urn:getAccountInfo"/>
+            <wsdl:output message="ns:getAccountInfoResponse" wsaw:Action="urn:getAccountInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLastCustomerInfo">
+            <wsdl:input message="ns:getLastCustomerInfoRequest" wsaw:Action="urn:getLastCustomerInfo"/>
+            <wsdl:output message="ns:getLastCustomerInfoResponse" wsaw:Action="urn:getLastCustomerInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerInfo">
+            <wsdl:input message="ns:getCustomerInfoRequest" wsaw:Action="urn:getCustomerInfo"/>
+            <wsdl:output message="ns:getCustomerInfoResponse" wsaw:Action="urn:getCustomerInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveCustomerList">
+            <wsdl:input message="ns:getActiveCustomerListRequest" wsaw:Action="urn:getActiveCustomerList"/>
+            <wsdl:output message="ns:getActiveCustomerListResponse" wsaw:Action="urn:getActiveCustomerListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerList">
+            <wsdl:input message="ns:getCustomerListRequest" wsaw:Action="urn:getCustomerList"/>
+            <wsdl:output message="ns:getCustomerListResponse" wsaw:Action="urn:getCustomerListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CustomerInfoPSSoap11Binding" type="ns:CustomerInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getAccountCustomerInfo">
+            <soap:operation soapAction="urn:getAccountCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountListByCustomer">
+            <soap:operation soapAction="urn:getAccountListByCustomer" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrueCardGradingInfo">
+            <soap:operation soapAction="urn:getTrueCardGradingInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountInfo">
+            <soap:operation soapAction="urn:getAccountInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastCustomerInfo">
+            <soap:operation soapAction="urn:getLastCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerInfo">
+            <soap:operation soapAction="urn:getCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerList">
+            <soap:operation soapAction="urn:getCustomerList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveCustomerList">
+            <soap:operation soapAction="urn:getActiveCustomerList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CustomerInfoPSSoap12Binding" type="ns:CustomerInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getAccountCustomerInfo">
+            <soap12:operation soapAction="urn:getAccountCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountListByCustomer">
+            <soap12:operation soapAction="urn:getAccountListByCustomer" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrueCardGradingInfo">
+            <soap12:operation soapAction="urn:getTrueCardGradingInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountInfo">
+            <soap12:operation soapAction="urn:getAccountInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastCustomerInfo">
+            <soap12:operation soapAction="urn:getLastCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerInfo">
+            <soap12:operation soapAction="urn:getCustomerInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerList">
+            <soap12:operation soapAction="urn:getCustomerList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveCustomerList">
+            <soap12:operation soapAction="urn:getActiveCustomerList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CustomerInfoPSHttpBinding" type="ns:CustomerInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getAccountCustomerInfo">
+            <http:operation location="getAccountCustomerInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountListByCustomer">
+            <http:operation location="getAccountListByCustomer"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrueCardGradingInfo">
+            <http:operation location="getTrueCardGradingInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountInfo">
+            <http:operation location="getAccountInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastCustomerInfo">
+            <http:operation location="getLastCustomerInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerInfo">
+            <http:operation location="getCustomerInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerList">
+            <http:operation location="getCustomerList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveCustomerList">
+            <http:operation location="getActiveCustomerList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CustomerInfoPS">
+        <wsdl:port name="CustomerInfoPSHttpSoap11Endpoint" binding="ns:CustomerInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8080/WSDLGenerator/services/CustomerInfoPS.CustomerInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CustomerInfoPSHttpSoap12Endpoint" binding="ns:CustomerInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8080/WSDLGenerator/services/CustomerInfoPS.CustomerInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CustomerInfoPSHttpEndpoint" binding="ns:CustomerInfoPSHttpBinding">
+            <http:address location="http://localhost:8080/WSDLGenerator/services/CustomerInfoPS.CustomerInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

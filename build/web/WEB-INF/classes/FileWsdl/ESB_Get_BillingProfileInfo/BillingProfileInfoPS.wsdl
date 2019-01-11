@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax29="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ns="http://api.interfaces.bllng.ei.tit.com" xmlns:ax25="http://billingprofile.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax26="http://customer.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax23="http://response.interfaces.bllng.ei.tit.com/xsd" xmlns:ax21="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax215="http://product.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax212="http://offer.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.bllng.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax28="http://customer.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax217="http://product.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax214="http://offer.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax211="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://billingprofile.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://customer.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://offer.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://product.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="BillingProfileInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountCustomerInfo" nillable="true" type="ax25:AccountCustomerInfo"/>
+                    <xs:element minOccurs="0" name="billingInfo" nillable="true" type="ax29:BillingInfo"/>
+                    <xs:element minOccurs="0" name="offerDataInfo" nillable="true" type="ax25:OfferDataInfo"/>
+                    <xs:element minOccurs="0" name="productInfo" nillable="true" type="ax25:ProductInfo"/>
+                    <xs:element minOccurs="0" name="system" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCustomerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="account" nillable="true" type="ax28:AccountInfo"/>
+                    <xs:element minOccurs="0" name="customer" nillable="true" type="ax28:CustomerInfo"/>
+                    <xs:element minOccurs="0" name="withholdingTaxRate" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferDataInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="currentOffer" nillable="true" type="ax25:AgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="futureOffer" nillable="true" type="ax25:AgreementOfferInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offer" nillable="true" type="ax214:OfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax214:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProductInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="subscriberInfo" nillable="true" type="ax217:SubscriberInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax210="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="BillingInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax210:AddressInfo"/>
+                    <xs:element minOccurs="0" name="billingArrangementInfo" nillable="true" type="ax29:BillingArrangementInfo"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax210:NameInfo"/>
+                    <xs:element minOccurs="0" name="personal" nillable="true" type="ax210:PersonalInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillingArrangementInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bcBanID" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="bcEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="billFormat" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billLang" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billProductionFrequency" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billProductionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billingArrangementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billingArrangementNo" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billingArrangementStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="businessEntityId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="consolidateBillInd" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="externalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemizedTaxIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastUpdateDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="openDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="splitParam" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax27="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://customer.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="AccountInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountCollection" nillable="true" type="ax26:AccountCollectionInfo"/>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="accountPriority" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="accountSubType" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax27:AddressInfo"/>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="arBalance" type="xs:double"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="ax26:BenInfo"/>
+                    <xs:element minOccurs="0" name="branchNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax27:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="company" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax27:ContactInfo"/>
+                    <xs:element minOccurs="0" name="convergenceCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimit" nillable="true" type="ax26:AccountCreditLimitInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax27:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="delinquent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="initiationReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="legacyBan" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax27:NameInfo"/>
+                    <xs:element minOccurs="0" name="openDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="parentBan" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="withholdingTaxIndicator" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCollectionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="collectionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fullSuspensionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="punishmentLevels" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="suspensionReason" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BenInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bcBanId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billMedia" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="consolidateIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCreditLimitInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="obligationCalculationFormula" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personalCreditLimit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="temporaryCreditLimit" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax27:AddressInfo"/>
+                    <xs:element minOccurs="0" name="billCycleInfo" nillable="true" type="ax26:CustomerBillCycleInfo"/>
+                    <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateExpirationDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="certificateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax27:ContactInfo"/>
+                    <xs:element minOccurs="0" name="contactLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerGrading" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerType" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="dealer" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="educationLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="income" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="job" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="largeCustomerIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="marketingChannel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax27:NameInfo"/>
+                    <xs:element minOccurs="0" name="nationality" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="occupation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerCurrency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personal" nillable="true" type="ax27:PersonalInfo"/>
+                    <xs:element minOccurs="0" name="registerDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="taxExemptionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trueCardGradingInfo" nillable="true" type="ax26:TrueCardGradingInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerBillCycleInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="ax27:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="changeCycleIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="changeCycleReqeustDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="changeCycleRequestStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="newBillCycle" nillable="true" type="xs:short"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="TrueCardGradingInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="banId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="gradingCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" xmlns:ax219="http://response.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.bllng.ei.tit.com">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://response.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:element name="getLastBillingProfileInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax21:SearchList"/>
+                        <xs:element minOccurs="0" name="optionalFieldList" nillable="true" type="ax21:StringList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastBillingProfileInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax23:BillingProfileInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillingProfileInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillingProfileInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax23:BillingProfileInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax216="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://product.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="SubscriberInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax21:AddressInfo"/>
+                    <xs:element minOccurs="0" name="barringByRequestActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="barringByRequestIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chNodeId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax21:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax21:ContactInfo"/>
+                    <xs:element minOccurs="0" name="convergenceCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitAtSubStatus" nillable="true" type="ax21:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax21:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dealer" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="installationType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="multiSIMLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax21:NameInfo"/>
+                    <xs:element minOccurs="0" name="porting" nillable="true" type="ax215:SubscriberPortingInfo"/>
+                    <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="proof" nillable="true" type="ax215:SubscriberProofInfo"/>
+                    <xs:element minOccurs="0" name="relatedSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="rfMigration" nillable="true" type="ax215:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="rmvMigration" nillable="true" type="ax215:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="smsIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="smsLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitPeriod" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax215:SubscriberStatusInfo"/>
+                    <xs:element minOccurs="0" name="subscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subscriberPassword" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subscriberType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subscriberTypeDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tmvMigration" nillable="true" type="ax215:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="trueLifeId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberPortingInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="donorOperator" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="donorZone" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="portIndicator" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="recipientOperator" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="recipientZone" nillable="true" type="ax21:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberProofInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dealerApp" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="proofDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="proofDocument" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberCompanyMigrationInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="activationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberStatusInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="lastActivityPathId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusLastActivity" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusReasonDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd">
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax21:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StringList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="valueArray" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AddressInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="addressLine1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="building" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="district" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="houseNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="moo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="roomNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="soi" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="street" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subDistrict" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StatusReasonInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="lastActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="reasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContactInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="homePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="officePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferredContactNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="privatePhone" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NameInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="branchName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="middleName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nameType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="organizationName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="storeId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tilte" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PersonalInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maritalStatus" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax24="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" xmlns:ax218="http://billingprofile.datatypes.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://billingprofile.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="BillingProfileInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax24:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="billingProfileInfo" nillable="true" type="ax25:BillingProfileInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax213="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://offer.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="OfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cugIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ffIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iddIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="irIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcRate" type="xs:double"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax213:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ServiceAgreementInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="agreementSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="parentSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="socSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getLastBillingProfileInfoRequest">
+        <wsdl:part name="parameters" element="ns:getLastBillingProfileInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getLastBillingProfileInfoResponse">
+        <wsdl:part name="parameters" element="ns:getLastBillingProfileInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBillingProfileInfoRequest">
+        <wsdl:part name="parameters" element="ns:getBillingProfileInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getBillingProfileInfoResponse">
+        <wsdl:part name="parameters" element="ns:getBillingProfileInfoResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BillingProfileInfoPSPortType">
+        <wsdl:operation name="getLastBillingProfileInfo">
+            <wsdl:input message="ns:getLastBillingProfileInfoRequest" wsaw:Action="urn:getLastBillingProfileInfo"/>
+            <wsdl:output message="ns:getLastBillingProfileInfoResponse" wsaw:Action="urn:getLastBillingProfileInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingProfileInfo">
+            <wsdl:input message="ns:getBillingProfileInfoRequest" wsaw:Action="urn:getBillingProfileInfo"/>
+            <wsdl:output message="ns:getBillingProfileInfoResponse" wsaw:Action="urn:getBillingProfileInfoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BillingProfileInfoPSSoap11Binding" type="ns:BillingProfileInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getLastBillingProfileInfo">
+            <soap:operation soapAction="urn:getLastBillingProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingProfileInfo">
+            <soap:operation soapAction="urn:getBillingProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BillingProfileInfoPSSoap12Binding" type="ns:BillingProfileInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getLastBillingProfileInfo">
+            <soap12:operation soapAction="urn:getLastBillingProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingProfileInfo">
+            <soap12:operation soapAction="urn:getBillingProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BillingProfileInfoPSHttpBinding" type="ns:BillingProfileInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getLastBillingProfileInfo">
+            <http:operation location="getLastBillingProfileInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBillingProfileInfo">
+            <http:operation location="getBillingProfileInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BillingProfileInfoPS">
+        <wsdl:port name="BillingProfileInfoPSHttpSoap11Endpoint" binding="ns:BillingProfileInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8080/WSDLGenerator/services/BillingProfileInfoPS.BillingProfileInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="BillingProfileInfoPSHttpSoap12Endpoint" binding="ns:BillingProfileInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8080/WSDLGenerator/services/BillingProfileInfoPS.BillingProfileInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="BillingProfileInfoPSHttpEndpoint" binding="ns:BillingProfileInfoPSHttpBinding">
+            <http:address location="http://localhost:8080/WSDLGenerator/services/BillingProfileInfoPS.BillingProfileInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

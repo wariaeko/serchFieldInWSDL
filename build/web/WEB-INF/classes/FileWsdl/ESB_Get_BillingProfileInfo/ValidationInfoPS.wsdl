@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2115="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2114="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax2117="http://validation.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax2119="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2120="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getHistoryServiceIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="searchTypeList" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getHistoryServiceIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2114:ServiceIndicatorListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getFutureServiceIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="searchTypeList" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getFutureServiceIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2114:ServiceIndicatorListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax2115:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2114:CustomerIndicatorListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentServiceIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="searchTypeList" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentServiceIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2114:ServiceIndicatorListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllServiceIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="searchTypeList" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllServiceIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2114:AllServiceIndicatorListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax2115:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2116="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2118="http://validation.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://validation.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="ServiceIndicatorListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2116:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceIndicatorArray" nillable="true" type="ax2118:ServiceIndicatorInfo"/>
+                            <xs:element minOccurs="0" name="size" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CustomerIndicatorListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2116:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="customerIndicatorArray" nillable="true" type="ax2118:CustomerIndicatorInfo"/>
+                            <xs:element minOccurs="0" name="size" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AllServiceIndicatorListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2116:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="current" nillable="true" type="ax2118:ServiceIndicatorList"/>
+                            <xs:element minOccurs="0" name="future" nillable="true" type="ax2118:ServiceIndicatorList"/>
+                            <xs:element minOccurs="0" name="history" nillable="true" type="ax2118:ServiceIndicatorList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://validation.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ServiceIndicatorInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="indicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerIndicatorInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="indicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ServiceIndicatorList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceIndicatorArray" nillable="true" type="ax2117:ServiceIndicatorInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getHistoryServiceIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getHistoryServiceIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getHistoryServiceIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getHistoryServiceIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentServiceIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentServiceIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentServiceIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentServiceIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getCustomerIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getCustomerIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAllServiceIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getAllServiceIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getAllServiceIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getAllServiceIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getFutureServiceIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getFutureServiceIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getFutureServiceIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getFutureServiceIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ValidationInfoPSPortType">
+        <wsdl:operation name="getHistoryServiceIndicatorList">
+            <wsdl:input message="ns:getHistoryServiceIndicatorListRequest" wsaw:Action="urn:getHistoryServiceIndicatorList"/>
+            <wsdl:output message="ns:getHistoryServiceIndicatorListResponse" wsaw:Action="urn:getHistoryServiceIndicatorListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentServiceIndicatorList">
+            <wsdl:input message="ns:getCurrentServiceIndicatorListRequest" wsaw:Action="urn:getCurrentServiceIndicatorList"/>
+            <wsdl:output message="ns:getCurrentServiceIndicatorListResponse" wsaw:Action="urn:getCurrentServiceIndicatorListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerIndicatorList">
+            <wsdl:input message="ns:getCustomerIndicatorListRequest" wsaw:Action="urn:getCustomerIndicatorList"/>
+            <wsdl:output message="ns:getCustomerIndicatorListResponse" wsaw:Action="urn:getCustomerIndicatorListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllServiceIndicatorList">
+            <wsdl:input message="ns:getAllServiceIndicatorListRequest" wsaw:Action="urn:getAllServiceIndicatorList"/>
+            <wsdl:output message="ns:getAllServiceIndicatorListResponse" wsaw:Action="urn:getAllServiceIndicatorListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFutureServiceIndicatorList">
+            <wsdl:input message="ns:getFutureServiceIndicatorListRequest" wsaw:Action="urn:getFutureServiceIndicatorList"/>
+            <wsdl:output message="ns:getFutureServiceIndicatorListResponse" wsaw:Action="urn:getFutureServiceIndicatorListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ValidationInfoPSSoap11Binding"
+    	type="ns:ValidationInfoPSPortType">
+    	<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+    		style="document" />
+    	<wsdl:operation name="getHistoryServiceIndicatorList">
+    		<soap:operation
+    			soapAction="urn:getHistoryServiceIndicatorList" style="document" />
+    		<wsdl:input>
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    	<wsdl:operation name="getCurrentServiceIndicatorList">
+    		<soap:operation
+    			soapAction="urn:getCurrentServiceIndicatorList" style="document" />
+    		<wsdl:input>
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    	<wsdl:operation name="getCustomerIndicatorList">
+    		<soap:operation soapAction="urn:getCustomerIndicatorList"
+    			style="document" />
+    		<wsdl:input>
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    	<wsdl:operation name="getAllServiceIndicatorList">
+    		<soap:operation soapAction="urn:getAllServiceIndicatorList"
+    			style="document" />
+    		<wsdl:input>
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    	<wsdl:operation name="getFutureServiceIndicatorList">
+    		<soap:operation
+    			soapAction="urn:getFutureServiceIndicatorList" style="document" />
+    		<wsdl:input>
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ValidationInfoPSSoap12Binding" type="ns:ValidationInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getHistoryServiceIndicatorList">
+            <soap12:operation soapAction="urn:getHistoryServiceIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentServiceIndicatorList">
+            <soap12:operation soapAction="urn:getCurrentServiceIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerIndicatorList">
+            <soap12:operation soapAction="urn:getCustomerIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllServiceIndicatorList">
+            <soap12:operation soapAction="urn:getAllServiceIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFutureServiceIndicatorList">
+            <soap12:operation soapAction="urn:getFutureServiceIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ValidationInfoPSHttpBinding" type="ns:ValidationInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getHistoryServiceIndicatorList">
+            <http:operation location="getHistoryServiceIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentServiceIndicatorList">
+            <http:operation location="getCurrentServiceIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerIndicatorList">
+            <http:operation location="getCustomerIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllServiceIndicatorList">
+            <http:operation location="getAllServiceIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFutureServiceIndicatorList">
+            <http:operation location="getFutureServiceIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ValidationInfoPS">
+        <wsdl:port name="ValidationInfoPSHttpSoap11Endpoint" binding="ns:ValidationInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/ValidationInfoPS.ValidationInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ValidationInfoPSHttpSoap12Endpoint" binding="ns:ValidationInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/ValidationInfoPS.ValidationInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ValidationInfoPSHttpEndpoint" binding="ns:ValidationInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/ValidationInfoPS.ValidationInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

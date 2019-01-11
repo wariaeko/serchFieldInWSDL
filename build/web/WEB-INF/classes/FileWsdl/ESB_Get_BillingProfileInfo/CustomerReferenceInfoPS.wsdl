@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:ax238="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax228="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax227="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax230="http://customerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax235="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax233="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax234="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getPublishPolicyList">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPublishPolicyListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:PublishPolicyListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPoolDealerList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax234:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPoolDealerListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:PoolDealerListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLogicalDateInfo">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLogicalDateInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:LogicalDateInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerSubTypeList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax234:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCustomerSubTypeListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:CustomerSubTypeListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCreditCardTypeList">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCreditCardTypeListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:GenericCodeListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCUGList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="groupType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax234:SearchList"/>
+                        <xs:element minOccurs="0" name="orderBy" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCUGListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:CUGListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCSMActivityReasonInfoList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax234:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCSMActivityReasonInfoListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax233:CSMActivityReasonInfoListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax236="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="CustomerSubTypeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="customerSubtypeInfoArray" nillable="true" type="ax235:CustomerSubTypeInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerSubTypeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountCategory" nillable="true" type="ax236:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="accountType" nillable="true" type="ax236:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax228:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="GenericCodeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="genericCodeInfoArray" nillable="true" type="ax238:GenericCodeInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GenericCodeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax232="http://customerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax239="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax237="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax229="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://customerref.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="PublishPolicyListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="publishPolicyList" nillable="true" type="ax232:PublishPolicyList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PoolDealerListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="poolDealerList" nillable="true" type="ax232:PoolDealerList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="LogicalDateInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="logicalDate" nillable="true" type="ax232:LogicalDateInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CustomerSubTypeListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="customerSubTypeList" nillable="true" type="ax237:CustomerSubTypeList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GenericCodeListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="genericCodeList" nillable="true" type="ax238:GenericCodeList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CUGListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cugList" nillable="true" type="ax232:CUGList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CSMActivityReasonInfoListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax229:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cacheDataList" nillable="true" type="ax232:CacheDataList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax231="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://customerref.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="PublishPolicyList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="publishPolicyInfoArray" nillable="true" type="ax230:PublishPolicyInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PublishPolicyInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="publishPolicyCode" nillable="true" type="ax231:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PoolDealerList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="poolDealerInfoArray" nillable="true" type="ax230:PoolDealerInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PoolDealerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dealerInfo" nillable="true" type="ax230:DealerInfo"/>
+                    <xs:element minOccurs="0" name="poolInfo" nillable="true" type="ax230:PoolInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DealerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dealerCode" nillable="true" type="ax231:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PoolInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="poolCode" nillable="true" type="ax231:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="poolType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LogicalDateInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="logicalDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CUGList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="cugInfoArray" nillable="true" type="ax230:CUGInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CUGInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="groupDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupIdentifier" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CacheDataList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="cacheDataInfoArray" nillable="true" type="ax230:CacheDataInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CacheDataInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="color" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="engDesc" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="longDesc" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="qty" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="shortDesc" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="thaiDesc" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getCUGListRequest">
+        <wsdl:part name="parameters" element="ns:getCUGList"/>
+    </wsdl:message>
+    <wsdl:message name="getCUGListResponse">
+        <wsdl:part name="parameters" element="ns:getCUGListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCSMActivityReasonInfoListRequest">
+        <wsdl:part name="parameters" element="ns:getCSMActivityReasonInfoList"/>
+    </wsdl:message>
+    <wsdl:message name="getCSMActivityReasonInfoListResponse">
+        <wsdl:part name="parameters" element="ns:getCSMActivityReasonInfoListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCreditCardTypeListRequest">
+        <wsdl:part name="parameters" element="ns:getCreditCardTypeList"/>
+    </wsdl:message>
+    <wsdl:message name="getCreditCardTypeListResponse">
+        <wsdl:part name="parameters" element="ns:getCreditCardTypeListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLogicalDateInfoRequest">
+        <wsdl:part name="parameters" element="ns:getLogicalDateInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getLogicalDateInfoResponse">
+        <wsdl:part name="parameters" element="ns:getLogicalDateInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPublishPolicyListRequest">
+        <wsdl:part name="parameters" element="ns:getPublishPolicyList"/>
+    </wsdl:message>
+    <wsdl:message name="getPublishPolicyListResponse">
+        <wsdl:part name="parameters" element="ns:getPublishPolicyListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerSubTypeListRequest">
+        <wsdl:part name="parameters" element="ns:getCustomerSubTypeList"/>
+    </wsdl:message>
+    <wsdl:message name="getCustomerSubTypeListResponse">
+        <wsdl:part name="parameters" element="ns:getCustomerSubTypeListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPoolDealerListRequest">
+        <wsdl:part name="parameters" element="ns:getPoolDealerList"/>
+    </wsdl:message>
+    <wsdl:message name="getPoolDealerListResponse">
+        <wsdl:part name="parameters" element="ns:getPoolDealerListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CustomerReferenceInfoPSPortType">
+        <wsdl:operation name="getCUGList">
+            <wsdl:input message="ns:getCUGListRequest" wsaw:Action="urn:getCUGList"/>
+            <wsdl:output message="ns:getCUGListResponse" wsaw:Action="urn:getCUGListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCSMActivityReasonInfoList">
+            <wsdl:input message="ns:getCSMActivityReasonInfoListRequest" wsaw:Action="urn:getCSMActivityReasonInfoList"/>
+            <wsdl:output message="ns:getCSMActivityReasonInfoListResponse" wsaw:Action="urn:getCSMActivityReasonInfoListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCreditCardTypeList">
+            <wsdl:input message="ns:getCreditCardTypeListRequest" wsaw:Action="urn:getCreditCardTypeList"/>
+            <wsdl:output message="ns:getCreditCardTypeListResponse" wsaw:Action="urn:getCreditCardTypeListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLogicalDateInfo">
+            <wsdl:input message="ns:getLogicalDateInfoRequest" wsaw:Action="urn:getLogicalDateInfo"/>
+            <wsdl:output message="ns:getLogicalDateInfoResponse" wsaw:Action="urn:getLogicalDateInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPublishPolicyList">
+            <wsdl:input message="ns:getPublishPolicyListRequest" wsaw:Action="urn:getPublishPolicyList"/>
+            <wsdl:output message="ns:getPublishPolicyListResponse" wsaw:Action="urn:getPublishPolicyListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerSubTypeList">
+            <wsdl:input message="ns:getCustomerSubTypeListRequest" wsaw:Action="urn:getCustomerSubTypeList"/>
+            <wsdl:output message="ns:getCustomerSubTypeListResponse" wsaw:Action="urn:getCustomerSubTypeListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolDealerList">
+            <wsdl:input message="ns:getPoolDealerListRequest" wsaw:Action="urn:getPoolDealerList"/>
+            <wsdl:output message="ns:getPoolDealerListResponse" wsaw:Action="urn:getPoolDealerListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CustomerReferenceInfoPSSoap11Binding" type="ns:CustomerReferenceInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCUGList">
+            <soap:operation soapAction="urn:getCUGList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCSMActivityReasonInfoList">
+            <soap:operation soapAction="urn:getCSMActivityReasonInfoList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLogicalDateInfo">
+            <soap:operation soapAction="urn:getLogicalDateInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCreditCardTypeList">
+            <soap:operation soapAction="urn:getCreditCardTypeList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPublishPolicyList">
+            <soap:operation soapAction="urn:getPublishPolicyList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerSubTypeList">
+            <soap:operation soapAction="urn:getCustomerSubTypeList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolDealerList">
+            <soap:operation soapAction="urn:getPoolDealerList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CustomerReferenceInfoPSSoap12Binding" type="ns:CustomerReferenceInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCUGList">
+            <soap12:operation soapAction="urn:getCUGList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCSMActivityReasonInfoList">
+            <soap12:operation soapAction="urn:getCSMActivityReasonInfoList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLogicalDateInfo">
+            <soap12:operation soapAction="urn:getLogicalDateInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCreditCardTypeList">
+            <soap12:operation soapAction="urn:getCreditCardTypeList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPublishPolicyList">
+            <soap12:operation soapAction="urn:getPublishPolicyList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerSubTypeList">
+            <soap12:operation soapAction="urn:getCustomerSubTypeList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolDealerList">
+            <soap12:operation soapAction="urn:getPoolDealerList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CustomerReferenceInfoPSHttpBinding" type="ns:CustomerReferenceInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getCUGList">
+            <http:operation location="getCUGList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCSMActivityReasonInfoList">
+            <http:operation location="getCSMActivityReasonInfoList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLogicalDateInfo">
+            <http:operation location="getLogicalDateInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCreditCardTypeList">
+            <http:operation location="getCreditCardTypeList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPublishPolicyList">
+            <http:operation location="getPublishPolicyList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCustomerSubTypeList">
+            <http:operation location="getCustomerSubTypeList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolDealerList">
+            <http:operation location="getPoolDealerList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CustomerReferenceInfoPS">
+        <wsdl:port name="CustomerReferenceInfoPSHttpSoap11Endpoint" binding="ns:CustomerReferenceInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/CustomerReferenceInfoPS.CustomerReferenceInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CustomerReferenceInfoPSHttpSoap12Endpoint" binding="ns:CustomerReferenceInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/CustomerReferenceInfoPS.CustomerReferenceInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CustomerReferenceInfoPSHttpEndpoint" binding="ns:CustomerReferenceInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/CustomerReferenceInfoPS.CustomerReferenceInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

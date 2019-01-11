@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:form >   
+        <title>Search Field</title>
+        <p:panel id="panel" header="Search Form" style="margin-bottom:10px;">
+
+            <h:panelGrid columns="4" cellpadding="5" style="text-align: right">
+                <h:outputLabel for="txt1" value="Field/Method: *"/>
+                <p:inputText id="txt1" value="#{searchView.text1}" required="true" validatorMessage="กรุณาใส่ 2 ตัวอักษรขึ้นไป" requiredMessage="กรุณาใส่ชื่อ Field ที่ต้องการค้นหา" label="Text 1" style="width: 296px">
+                    <f:validateLength minimum="2" />
+                </p:inputText>
+                <br/>
+                <h:panelGrid columns="2">
+                    <p:commandButton process="@form:@child(1):txt1" update="@form" value="Search in Project!" action="#{searchView.searchField()}" style="margin-left: 55px"/>
+                </h:panelGrid>
+
+                <p/>
+                <p:message for="@previous" />
+            </h:panelGrid>
+            <p:messages id="messages" />
+
+        </p:panel>
+
+    </h:form>
+</html>

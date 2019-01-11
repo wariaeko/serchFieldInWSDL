@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.bllng.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax25="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax23="http://response.interfaces.bllng.ei.tit.com/xsd" xmlns:ax21="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.bllng.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd">
+            <xs:complexType name="BillImageInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="fileBytesArray" nillable="true" type="xs:base64Binary"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax27="http://response.interfaces.bllng.ei.tit.com/xsd" xmlns:ax22="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.bllng.ei.tit.com">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://response.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:element name="getBillImageByBillId">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax21:SearchList"/>
+                        <xs:element minOccurs="0" name="optionalFieldList" nillable="true" type="ax21:StringList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBillImageByBillIdResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax27:BillImageInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd">
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax21:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StringList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="valueArray" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax26="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd" xmlns:ax24="http://common.datatype.interfaces.bllng.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.bllng.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:import namespace="http://billing.datatypes.interfaces.bllng.ei.tit.com/xsd"/>
+            <xs:complexType name="BillImageInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax21:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="billImageInfo" nillable="true" type="ax25:BillImageInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getBillImageByBillIdRequest">
+        <wsdl:part name="parameters" element="ns:getBillImageByBillId"/>
+    </wsdl:message>
+    <wsdl:message name="getBillImageByBillIdResponse">
+        <wsdl:part name="parameters" element="ns:getBillImageByBillIdResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BillImageInfoPSPortType">
+        <wsdl:operation name="getBillImageByBillId">
+            <wsdl:input message="ns:getBillImageByBillIdRequest" wsaw:Action="urn:getBillImageByBillId"/>
+            <wsdl:output message="ns:getBillImageByBillIdResponse" wsaw:Action="urn:getBillImageByBillIdResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BillImageInfoPSSoap11Binding" type="ns:BillImageInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getBillImageByBillId">
+            <soap:operation soapAction="urn:getBillImageByBillId" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BillImageInfoPSSoap12Binding" type="ns:BillImageInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getBillImageByBillId">
+            <soap12:operation soapAction="urn:getBillImageByBillId" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BillImageInfoPSHttpBinding" type="ns:BillImageInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getBillImageByBillId">
+            <http:operation location="getBillImageByBillId"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BillImageInfoPS">
+        <wsdl:port name="BillImageInfoPSHttpSoap11Endpoint" binding="ns:BillImageInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8080/WSDLGenerator/services/BillImageInfoPS.BillImageInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="BillImageInfoPSHttpSoap12Endpoint" binding="ns:BillImageInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8080/WSDLGenerator/services/BillImageInfoPS.BillImageInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="BillImageInfoPSHttpEndpoint" binding="ns:BillImageInfoPSHttpBinding">
+            <http:address location="http://localhost:8080/WSDLGenerator/services/BillImageInfoPS.BillImageInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

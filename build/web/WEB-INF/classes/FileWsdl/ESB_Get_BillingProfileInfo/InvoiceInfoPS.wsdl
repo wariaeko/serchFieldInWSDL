@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax245="http://invoice.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax242="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax243="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax249="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax248="http://response.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getLastInvoiceList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="lastNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastInvoiceListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:LastInvoiceListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastDocumentList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="lastNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLastDocumentListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:LastDocumentListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCloseInvoiceSummaryAmount">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCloseInvoiceSummaryAmountResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceAmountSummaryInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax249:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllInvoiceSummaryAmount">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllInvoiceSummaryAmountResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceAmountSummaryInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceChargeList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax249:SearchList"/>
+                        <xs:element minOccurs="0" name="optionalFieldList" nillable="true" type="ax249:OptionalFieldList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceChargeListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceChargeListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllInvoiceList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllInvoiceListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOpenInvoiceList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOpenInvoiceListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceListBySearchList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax249:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInvoiceListBySearchListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax248:InvoiceListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax243:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OptionalFieldList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="optionalFieldArray" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax246="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://invoice.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="InvoiceList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="invoiceInfoArray" nillable="true" type="ax245:InvoiceInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InvoiceInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="adjustmentAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="adjustmentNetAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="availableAdjustmentAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="availableAdjustmentNetAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="baNo" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="billAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="billDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="billProductType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billSequenceNo" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="billTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="billingDocumentStatus" nillable="true" type="ax246:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="billingDocumentType" nillable="true" type="ax246:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="converageEndDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="converageStartDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="convergenceInvoiceNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coveredAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="creditTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerManagerBaNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="discountAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="discountNetAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="discountTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="disputeNetAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="disputeTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="dueDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="invoiceAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="invoiceBcBanId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="invoiceCreationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="invoiceCycle" nillable="true" type="ax245:CycleInfo"/>
+                    <xs:element minOccurs="0" name="invoiceId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="invoiceStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="invoiceStatusChangeDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="invoiceTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="invoiceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="originalBalanceAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="paymentAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="performanceIndStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="restrictionAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="restrictionTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="unpaidAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="unpaidNetAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="unpaidTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="vatRate" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CycleInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" name="month" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" name="year" nillable="true" type="xs:short"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax247="http://invoice.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax244="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://invoice.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="LastInvoiceListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="invoiceList" nillable="true" type="ax245:InvoiceList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="LastDocumentListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="invoiceList" nillable="true" type="ax245:InvoiceList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InvoiceAmountSummaryInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="adjustmentAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="coveredAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="invoiceAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="invoiceTaxAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="originalBalanceAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="paymentAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="restrictionAmount" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="restrictionTaxAmount" nillable="true" type="xs:double"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InvoiceInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="invoiceInfo" nillable="true" type="ax245:InvoiceInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InvoiceChargeListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="invoiceChargeList" nillable="true" type="ax242:InvoiceChargeList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InvoiceChargeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="invoiceChargeInfoArray" nillable="true" type="ax242:InvoiceChargeInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InvoiceChargeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="amount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="baNo" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="charge" nillable="true" type="ax244:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="chargeFromDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="chargeId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="chargeToDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="chargeType" nillable="true" type="ax244:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="discountCode" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="invoiceCycle" nillable="true" type="ax245:CycleInfo"/>
+                    <xs:element minOccurs="0" name="invoiceId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offer" nillable="true" type="ax244:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="offerName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="origin" nillable="true" type="ax244:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="restrictedAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="restrictedTaxAmount" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="revenue" nillable="true" type="ax244:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="tax" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="totalMinuteUsed" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="totalNumberOfCall" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InvoiceListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax244:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="invoiceList" nillable="true" type="ax245:InvoiceList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getInvoiceInfoRequest">
+        <wsdl:part name="parameters" element="ns:getInvoiceInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceInfoResponse">
+        <wsdl:part name="parameters" element="ns:getInvoiceInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceChargeListRequest">
+        <wsdl:part name="parameters" element="ns:getInvoiceChargeList"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceChargeListResponse">
+        <wsdl:part name="parameters" element="ns:getInvoiceChargeListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceSummaryAmountRequest">
+        <wsdl:part name="parameters" element="ns:getAllInvoiceSummaryAmount"/>
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceSummaryAmountResponse">
+        <wsdl:part name="parameters" element="ns:getAllInvoiceSummaryAmountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCloseInvoiceSummaryAmountRequest">
+        <wsdl:part name="parameters" element="ns:getCloseInvoiceSummaryAmount"/>
+    </wsdl:message>
+    <wsdl:message name="getCloseInvoiceSummaryAmountResponse">
+        <wsdl:part name="parameters" element="ns:getCloseInvoiceSummaryAmountResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLastDocumentListRequest">
+        <wsdl:part name="parameters" element="ns:getLastDocumentList"/>
+    </wsdl:message>
+    <wsdl:message name="getLastDocumentListResponse">
+        <wsdl:part name="parameters" element="ns:getLastDocumentListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLastInvoiceListRequest">
+        <wsdl:part name="parameters" element="ns:getLastInvoiceList"/>
+    </wsdl:message>
+    <wsdl:message name="getLastInvoiceListResponse">
+        <wsdl:part name="parameters" element="ns:getLastInvoiceListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceListBySearchListRequest">
+        <wsdl:part name="parameters" element="ns:getInvoiceListBySearchList"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceListBySearchListResponse">
+        <wsdl:part name="parameters" element="ns:getInvoiceListBySearchListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceListRequest">
+        <wsdl:part name="parameters" element="ns:getAllInvoiceList"/>
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceListResponse">
+        <wsdl:part name="parameters" element="ns:getAllInvoiceListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getOpenInvoiceListRequest">
+        <wsdl:part name="parameters" element="ns:getOpenInvoiceList"/>
+    </wsdl:message>
+    <wsdl:message name="getOpenInvoiceListResponse">
+        <wsdl:part name="parameters" element="ns:getOpenInvoiceListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="InvoiceInfoPSPortType">
+        <wsdl:operation name="getInvoiceInfo">
+            <wsdl:input message="ns:getInvoiceInfoRequest" wsaw:Action="urn:getInvoiceInfo"/>
+            <wsdl:output message="ns:getInvoiceInfoResponse" wsaw:Action="urn:getInvoiceInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceChargeList">
+            <wsdl:input message="ns:getInvoiceChargeListRequest" wsaw:Action="urn:getInvoiceChargeList"/>
+            <wsdl:output message="ns:getInvoiceChargeListResponse" wsaw:Action="urn:getInvoiceChargeListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceSummaryAmount">
+            <wsdl:input message="ns:getAllInvoiceSummaryAmountRequest" wsaw:Action="urn:getAllInvoiceSummaryAmount"/>
+            <wsdl:output message="ns:getAllInvoiceSummaryAmountResponse" wsaw:Action="urn:getAllInvoiceSummaryAmountResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCloseInvoiceSummaryAmount">
+            <wsdl:input message="ns:getCloseInvoiceSummaryAmountRequest" wsaw:Action="urn:getCloseInvoiceSummaryAmount"/>
+            <wsdl:output message="ns:getCloseInvoiceSummaryAmountResponse" wsaw:Action="urn:getCloseInvoiceSummaryAmountResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLastDocumentList">
+            <wsdl:input message="ns:getLastDocumentListRequest" wsaw:Action="urn:getLastDocumentList"/>
+            <wsdl:output message="ns:getLastDocumentListResponse" wsaw:Action="urn:getLastDocumentListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLastInvoiceList">
+            <wsdl:input message="ns:getLastInvoiceListRequest" wsaw:Action="urn:getLastInvoiceList"/>
+            <wsdl:output message="ns:getLastInvoiceListResponse" wsaw:Action="urn:getLastInvoiceListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceListBySearchList">
+            <wsdl:input message="ns:getInvoiceListBySearchListRequest" wsaw:Action="urn:getInvoiceListBySearchList"/>
+            <wsdl:output message="ns:getInvoiceListBySearchListResponse" wsaw:Action="urn:getInvoiceListBySearchListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceList">
+            <wsdl:input message="ns:getAllInvoiceListRequest" wsaw:Action="urn:getAllInvoiceList"/>
+            <wsdl:output message="ns:getAllInvoiceListResponse" wsaw:Action="urn:getAllInvoiceListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOpenInvoiceList">
+            <wsdl:input message="ns:getOpenInvoiceListRequest" wsaw:Action="urn:getOpenInvoiceList"/>
+            <wsdl:output message="ns:getOpenInvoiceListResponse" wsaw:Action="urn:getOpenInvoiceListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="InvoiceInfoPSSoap11Binding" type="ns:InvoiceInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getInvoiceInfo">
+            <soap:operation soapAction="urn:getInvoiceInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceChargeList">
+            <soap:operation soapAction="urn:getInvoiceChargeList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceSummaryAmount">
+            <soap:operation soapAction="urn:getAllInvoiceSummaryAmount" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastDocumentList">
+            <soap:operation soapAction="urn:getLastDocumentList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCloseInvoiceSummaryAmount">
+            <soap:operation soapAction="urn:getCloseInvoiceSummaryAmount" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastInvoiceList">
+            <soap:operation soapAction="urn:getLastInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceListBySearchList">
+            <soap:operation soapAction="urn:getInvoiceListBySearchList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceList">
+            <soap:operation soapAction="urn:getAllInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOpenInvoiceList">
+            <soap:operation soapAction="urn:getOpenInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="InvoiceInfoPSSoap12Binding" type="ns:InvoiceInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getInvoiceInfo">
+            <soap12:operation soapAction="urn:getInvoiceInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceChargeList">
+            <soap12:operation soapAction="urn:getInvoiceChargeList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceSummaryAmount">
+            <soap12:operation soapAction="urn:getAllInvoiceSummaryAmount" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastDocumentList">
+            <soap12:operation soapAction="urn:getLastDocumentList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCloseInvoiceSummaryAmount">
+            <soap12:operation soapAction="urn:getCloseInvoiceSummaryAmount" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastInvoiceList">
+            <soap12:operation soapAction="urn:getLastInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceListBySearchList">
+            <soap12:operation soapAction="urn:getInvoiceListBySearchList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceList">
+            <soap12:operation soapAction="urn:getAllInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOpenInvoiceList">
+            <soap12:operation soapAction="urn:getOpenInvoiceList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="InvoiceInfoPSHttpBinding" type="ns:InvoiceInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getInvoiceInfo">
+            <http:operation location="getInvoiceInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceChargeList">
+            <http:operation location="getInvoiceChargeList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceSummaryAmount">
+            <http:operation location="getAllInvoiceSummaryAmount"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastDocumentList">
+            <http:operation location="getLastDocumentList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCloseInvoiceSummaryAmount">
+            <http:operation location="getCloseInvoiceSummaryAmount"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLastInvoiceList">
+            <http:operation location="getLastInvoiceList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoiceListBySearchList">
+            <http:operation location="getInvoiceListBySearchList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllInvoiceList">
+            <http:operation location="getAllInvoiceList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOpenInvoiceList">
+            <http:operation location="getOpenInvoiceList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="InvoiceInfoPS">
+        <wsdl:port name="InvoiceInfoPSHttpSoap11Endpoint" binding="ns:InvoiceInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/InvoiceInfoPS.InvoiceInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="InvoiceInfoPSHttpSoap12Endpoint" binding="ns:InvoiceInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/InvoiceInfoPS.InvoiceInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="InvoiceInfoPSHttpEndpoint" binding="ns:InvoiceInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/InvoiceInfoPS.InvoiceInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

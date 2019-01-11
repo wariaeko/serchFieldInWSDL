@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2107="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2106="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:ax2109="http://offer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax2110="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://offer.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="SplitChargeOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="basicOfferInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreementInfo" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                    <xs:element minOccurs="0" name="splitChargeParameterInfo" nillable="true" type="ax2109:SplitChargeParameterInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BasicOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax2107:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ServiceAgreementInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="agreementSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="effectiveIssueDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationIssueDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="parentSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="socSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SplitChargeParameterInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="splitCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitPeriod" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="targetAccountNo" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="targetPCN" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SpendingLimitAgreementOfferList">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="spendingLimitArray" nillable="true" type="ax2109:SpendingLimitAgreementOfferInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SpendingLimitAgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offerInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                    <xs:element minOccurs="0" name="spendingLimitInfo" nillable="true" type="ax2109:SpendingLimitInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SpendingLimitInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="firstTriggerPercentage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="incrementTriggerPercentage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="thresholdAmount" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementSpecialOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="agreementSpecialOfferArray" nillable="true" type="ax2109:AgreementSpecialOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementSpecialOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offer" nillable="true" type="ax2109:SpecialOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SpecialOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax2107:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="specialOfferIndicator" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OUSpecialOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ouSpecialOfferArray" nillable="true" type="ax2109:OUSpecialOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OUSpecialOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offer" nillable="true" type="ax2109:SpecialOfferInfo"/>
+                    <xs:element minOccurs="0" name="ou" nillable="true" type="ax2109:OUInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OUInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ouId" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementGPRSOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="agreementGPRSOfferArray" nillable="true" type="ax2109:AgreementGPRSOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementGPRSOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="gprsOffer" nillable="true" type="ax2109:GPRSOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cugIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ffIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iddIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="irIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcRate" type="xs:double"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax2107:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GPRSOfferInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax2109:OfferInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="gprsTypeList" nillable="true" type="ax2109:GPRSTypeList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GPRSTypeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="gprsTypeArray" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FFAgreementOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ffOfferArray" nillable="true" type="ax2109:FFAgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FFAgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ffNumberArray" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ffNumberEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="offerInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CreditLimitAtSubAgreementOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="creditLimitAtSubArray" nillable="true" type="ax2109:CreditLimitAtSubAgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CreditLimitAtSubAgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="creditLimitAtSubInfo" nillable="true" type="ax2109:CreditLimitAtSubInfo"/>
+                    <xs:element minOccurs="0" name="offerInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CreditLimitAtSubInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="firstTriggerPercent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="incrementTriggerPercent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="permanentThreshold" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="temporaryThreshold" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CUGAgreementOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="cugOfferArray" nillable="true" type="ax2109:CUGAgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CUGAgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="cug" nillable="true" type="ax2109:CUGInfo"/>
+                    <xs:element minOccurs="0" name="offerInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CUGInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="groupDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupIdentifier" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementBasicOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="agreementBasicOfferInfo" nillable="true" type="ax2109:AgreementBasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementBasicOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offerInfo" nillable="true" type="ax2109:BasicOfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax2109:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2112="http://response.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getCurrentSplitChargeInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSplitChargeInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:SplitChargeInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpendingLimitList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpendingLimitListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:SpendingLimitAgreementOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorListByOU">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ouId" type="xs:long"/>
+                        <xs:element minOccurs="0" name="specialOfferIndicator" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorListByOUResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:AgreementSpecialOfferListPagingResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorListByCustomer">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="customerId" type="xs:int"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="specialOfferIndicator" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorListByCustomerResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:OUSpecialOfferListPagingResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="specialOfferIndicator" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentSpecialOfferIndicatorListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:AgreementSpecialOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentGPRSListByMSISDN">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentGPRSListByMSISDNResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:GPRSOfferInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentGPRSList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentGPRSListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:AgreementGPRSOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentFriendFamilyList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentFriendFamilyListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:FFAgreementOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentCreditLimitAtSubList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentCreditLimitAtSubListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:CreditLimitAtSubAgreementOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentCUGList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentCUGListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:CUGAgreementOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentAllowanceOfferList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentAllowanceOfferListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2106:AllowanceAtSubAgreementOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2108="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2111="http://offer.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://offer.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="SplitChargeInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="splitChargeOfferInfo" nillable="true" type="ax2109:SplitChargeOfferInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SpendingLimitAgreementOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="spendingLimitList" nillable="true" type="ax2109:SpendingLimitAgreementOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AgreementSpecialOfferListPagingResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="agreementSpecialOfferList" nillable="true" type="ax2109:AgreementSpecialOfferList"/>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="OUSpecialOfferListPagingResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="ouSpecialOfferList" nillable="true" type="ax2109:OUSpecialOfferList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AgreementSpecialOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="agreementSpecialOfferList" nillable="true" type="ax2109:AgreementSpecialOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GPRSOfferInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="agreementGPRSOfferList" nillable="true" type="ax2109:AgreementGPRSOfferList"/>
+                            <xs:element minOccurs="0" name="subscriberId" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="system" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AgreementGPRSOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="agreementGPRSOfferList" nillable="true" type="ax2109:AgreementGPRSOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="FFAgreementOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="ffOfferList" nillable="true" type="ax2109:FFAgreementOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CreditLimitAtSubAgreementOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="creditLimitAtSubList" nillable="true" type="ax2109:CreditLimitAtSubAgreementOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CUGAgreementOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cugOfferList" nillable="true" type="ax2109:CUGAgreementOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AllowanceAtSubAgreementOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax2107:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="capMaxAgreementOfferList" nillable="true" type="ax2109:AgreementBasicOfferList"/>
+                            <xs:element minOccurs="0" name="pooledAgreementOfferList" nillable="true" type="ax2109:AgreementBasicOfferList"/>
+                            <xs:element minOccurs="0" name="poolingAgreementOfferList" nillable="true" type="ax2109:AgreementBasicOfferList"/>
+                            <xs:element minOccurs="0" name="shareAllowanceAgreementOfferList" nillable="true" type="ax2109:AgreementBasicOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListByOURequest">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorListByOU"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListByOUResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorListByOUResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentAllowanceOfferListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentAllowanceOfferList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentAllowanceOfferListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentAllowanceOfferListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpendingLimitListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentSpendingLimitList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpendingLimitListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentSpendingLimitListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentFriendFamilyListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentFriendFamilyList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentFriendFamilyListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentFriendFamilyListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentCUGListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentCUGList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentCUGListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentCUGListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentCreditLimitAtSubListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentCreditLimitAtSubList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentCreditLimitAtSubListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentCreditLimitAtSubListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListByCustomerRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorListByCustomer"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSpecialOfferIndicatorListByCustomerResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentSpecialOfferIndicatorListByCustomerResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSplitChargeInfoRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentSplitChargeInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentSplitChargeInfoResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentSplitChargeInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentGPRSListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentGPRSList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentGPRSListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentGPRSListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentGPRSListByMSISDNRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentGPRSListByMSISDN"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentGPRSListByMSISDNResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentGPRSListByMSISDNResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="SpecialOfferInfoPSPortType">
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByOU">
+            <wsdl:input message="ns:getCurrentSpecialOfferIndicatorListByOURequest" wsaw:Action="urn:getCurrentSpecialOfferIndicatorListByOU"/>
+            <wsdl:output message="ns:getCurrentSpecialOfferIndicatorListByOUResponse" wsaw:Action="urn:getCurrentSpecialOfferIndicatorListByOUResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorList">
+            <wsdl:input message="ns:getCurrentSpecialOfferIndicatorListRequest" wsaw:Action="urn:getCurrentSpecialOfferIndicatorList"/>
+            <wsdl:output message="ns:getCurrentSpecialOfferIndicatorListResponse" wsaw:Action="urn:getCurrentSpecialOfferIndicatorListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentAllowanceOfferList">
+            <wsdl:input message="ns:getCurrentAllowanceOfferListRequest" wsaw:Action="urn:getCurrentAllowanceOfferList"/>
+            <wsdl:output message="ns:getCurrentAllowanceOfferListResponse" wsaw:Action="urn:getCurrentAllowanceOfferListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpendingLimitList">
+            <wsdl:input message="ns:getCurrentSpendingLimitListRequest" wsaw:Action="urn:getCurrentSpendingLimitList"/>
+            <wsdl:output message="ns:getCurrentSpendingLimitListResponse" wsaw:Action="urn:getCurrentSpendingLimitListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentFriendFamilyList">
+            <wsdl:input message="ns:getCurrentFriendFamilyListRequest" wsaw:Action="urn:getCurrentFriendFamilyList"/>
+            <wsdl:output message="ns:getCurrentFriendFamilyListResponse" wsaw:Action="urn:getCurrentFriendFamilyListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCUGList">
+            <wsdl:input message="ns:getCurrentCUGListRequest" wsaw:Action="urn:getCurrentCUGList"/>
+            <wsdl:output message="ns:getCurrentCUGListResponse" wsaw:Action="urn:getCurrentCUGListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCreditLimitAtSubList">
+            <wsdl:input message="ns:getCurrentCreditLimitAtSubListRequest" wsaw:Action="urn:getCurrentCreditLimitAtSubList"/>
+            <wsdl:output message="ns:getCurrentCreditLimitAtSubListResponse" wsaw:Action="urn:getCurrentCreditLimitAtSubListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByCustomer">
+            <wsdl:input message="ns:getCurrentSpecialOfferIndicatorListByCustomerRequest" wsaw:Action="urn:getCurrentSpecialOfferIndicatorListByCustomer"/>
+            <wsdl:output message="ns:getCurrentSpecialOfferIndicatorListByCustomerResponse" wsaw:Action="urn:getCurrentSpecialOfferIndicatorListByCustomerResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSplitChargeInfo">
+            <wsdl:input message="ns:getCurrentSplitChargeInfoRequest" wsaw:Action="urn:getCurrentSplitChargeInfo"/>
+            <wsdl:output message="ns:getCurrentSplitChargeInfoResponse" wsaw:Action="urn:getCurrentSplitChargeInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSList">
+            <wsdl:input message="ns:getCurrentGPRSListRequest" wsaw:Action="urn:getCurrentGPRSList"/>
+            <wsdl:output message="ns:getCurrentGPRSListResponse" wsaw:Action="urn:getCurrentGPRSListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSListByMSISDN">
+            <wsdl:input message="ns:getCurrentGPRSListByMSISDNRequest" wsaw:Action="urn:getCurrentGPRSListByMSISDN"/>
+            <wsdl:output message="ns:getCurrentGPRSListByMSISDNResponse" wsaw:Action="urn:getCurrentGPRSListByMSISDNResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SpecialOfferInfoPSSoap11Binding" type="ns:SpecialOfferInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByOU">
+            <soap:operation soapAction="urn:getCurrentSpecialOfferIndicatorListByOU" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorList">
+            <soap:operation soapAction="urn:getCurrentSpecialOfferIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpendingLimitList">
+            <soap:operation soapAction="urn:getCurrentSpendingLimitList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentAllowanceOfferList">
+            <soap:operation soapAction="urn:getCurrentAllowanceOfferList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentFriendFamilyList">
+            <soap:operation soapAction="urn:getCurrentFriendFamilyList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCUGList">
+            <soap:operation soapAction="urn:getCurrentCUGList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCreditLimitAtSubList">
+            <soap:operation soapAction="urn:getCurrentCreditLimitAtSubList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByCustomer">
+            <soap:operation soapAction="urn:getCurrentSpecialOfferIndicatorListByCustomer" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSplitChargeInfo">
+            <soap:operation soapAction="urn:getCurrentSplitChargeInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSList">
+            <soap:operation soapAction="urn:getCurrentGPRSList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSListByMSISDN">
+            <soap:operation soapAction="urn:getCurrentGPRSListByMSISDN" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SpecialOfferInfoPSSoap12Binding" type="ns:SpecialOfferInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByOU">
+            <soap12:operation soapAction="urn:getCurrentSpecialOfferIndicatorListByOU" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorList">
+            <soap12:operation soapAction="urn:getCurrentSpecialOfferIndicatorList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpendingLimitList">
+            <soap12:operation soapAction="urn:getCurrentSpendingLimitList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentAllowanceOfferList">
+            <soap12:operation soapAction="urn:getCurrentAllowanceOfferList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentFriendFamilyList">
+            <soap12:operation soapAction="urn:getCurrentFriendFamilyList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCUGList">
+            <soap12:operation soapAction="urn:getCurrentCUGList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCreditLimitAtSubList">
+            <soap12:operation soapAction="urn:getCurrentCreditLimitAtSubList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByCustomer">
+            <soap12:operation soapAction="urn:getCurrentSpecialOfferIndicatorListByCustomer" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSplitChargeInfo">
+            <soap12:operation soapAction="urn:getCurrentSplitChargeInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSList">
+            <soap12:operation soapAction="urn:getCurrentGPRSList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSListByMSISDN">
+            <soap12:operation soapAction="urn:getCurrentGPRSListByMSISDN" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SpecialOfferInfoPSHttpBinding" type="ns:SpecialOfferInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByOU">
+            <http:operation location="getCurrentSpecialOfferIndicatorListByOU"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorList">
+            <http:operation location="getCurrentSpecialOfferIndicatorList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpendingLimitList">
+            <http:operation location="getCurrentSpendingLimitList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentAllowanceOfferList">
+            <http:operation location="getCurrentAllowanceOfferList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentFriendFamilyList">
+            <http:operation location="getCurrentFriendFamilyList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCUGList">
+            <http:operation location="getCurrentCUGList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentCreditLimitAtSubList">
+            <http:operation location="getCurrentCreditLimitAtSubList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSpecialOfferIndicatorListByCustomer">
+            <http:operation location="getCurrentSpecialOfferIndicatorListByCustomer"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentSplitChargeInfo">
+            <http:operation location="getCurrentSplitChargeInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSList">
+            <http:operation location="getCurrentGPRSList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentGPRSListByMSISDN">
+            <http:operation location="getCurrentGPRSListByMSISDN"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SpecialOfferInfoPS">
+        <wsdl:port name="SpecialOfferInfoPSHttpSoap11Endpoint" binding="ns:SpecialOfferInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/SpecialOfferInfoPS.SpecialOfferInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SpecialOfferInfoPSHttpSoap12Endpoint" binding="ns:SpecialOfferInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/SpecialOfferInfoPS.SpecialOfferInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SpecialOfferInfoPSHttpEndpoint" binding="ns:SpecialOfferInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/SpecialOfferInfoPS.SpecialOfferInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

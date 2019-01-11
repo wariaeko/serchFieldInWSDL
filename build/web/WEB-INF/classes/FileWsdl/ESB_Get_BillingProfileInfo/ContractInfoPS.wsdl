@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:ax28="http://contract.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax25="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax26="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax212="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax211="http://response.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getCurrentContractList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentContractListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax25:ContractListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentPrepaidContractList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="productId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentPrepaidContractListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax25:ContractListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentPropositionAndContractList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="agreementId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentPropositionAndContractListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax25:PropositionListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentContractListBySearchList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax212:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCurrentContractListBySearchListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax25:ContractListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax26:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax27="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax210="http://contract.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://contract.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="ContractListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax27:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="contractList" nillable="true" type="ax28:ContractList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PropositionListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax27:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="propositionList" nillable="true" type="ax28:PropositionList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax29="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://contract.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="ContractList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="contractInfoArray" nillable="true" type="ax28:ContractInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContractInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contractExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="contractNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contractStartDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="fee" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerInstanceId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="offerServiceLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="proposition" nillable="true" type="ax29:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="term" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="terminationDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PropositionList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="propositionArray" nillable="true" type="ax28:PropositionInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PropositionInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax28:ContractInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="contractIndicator" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getCurrentPropositionAndContractListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentPropositionAndContractList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentPropositionAndContractListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentPropositionAndContractListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentPrepaidContractListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentPrepaidContractList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentPrepaidContractListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentPrepaidContractListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentContractListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentContractList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentContractListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentContractListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentContractListBySearchListRequest">
+        <wsdl:part name="parameters" element="ns:getCurrentContractListBySearchList"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrentContractListBySearchListResponse">
+        <wsdl:part name="parameters" element="ns:getCurrentContractListBySearchListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ContractInfoPSPortType">
+        <wsdl:operation name="getCurrentPropositionAndContractList">
+            <wsdl:input message="ns:getCurrentPropositionAndContractListRequest" wsaw:Action="urn:getCurrentPropositionAndContractList"/>
+            <wsdl:output message="ns:getCurrentPropositionAndContractListResponse" wsaw:Action="urn:getCurrentPropositionAndContractListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentPrepaidContractList">
+            <wsdl:input message="ns:getCurrentPrepaidContractListRequest" wsaw:Action="urn:getCurrentPrepaidContractList"/>
+            <wsdl:output message="ns:getCurrentPrepaidContractListResponse" wsaw:Action="urn:getCurrentPrepaidContractListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractList">
+            <wsdl:input message="ns:getCurrentContractListRequest" wsaw:Action="urn:getCurrentContractList"/>
+            <wsdl:output message="ns:getCurrentContractListResponse" wsaw:Action="urn:getCurrentContractListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractListBySearchList">
+            <wsdl:input message="ns:getCurrentContractListBySearchListRequest" wsaw:Action="urn:getCurrentContractListBySearchList"/>
+            <wsdl:output message="ns:getCurrentContractListBySearchListResponse" wsaw:Action="urn:getCurrentContractListBySearchListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ContractInfoPSSoap11Binding" type="ns:ContractInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCurrentPropositionAndContractList">
+            <soap:operation soapAction="urn:getCurrentPropositionAndContractList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentPrepaidContractList">
+            <soap:operation soapAction="urn:getCurrentPrepaidContractList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractList">
+            <soap:operation soapAction="urn:getCurrentContractList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractListBySearchList">
+            <soap:operation soapAction="urn:getCurrentContractListBySearchList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ContractInfoPSSoap12Binding" type="ns:ContractInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCurrentPropositionAndContractList">
+            <soap12:operation soapAction="urn:getCurrentPropositionAndContractList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentPrepaidContractList">
+            <soap12:operation soapAction="urn:getCurrentPrepaidContractList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractList">
+            <soap12:operation soapAction="urn:getCurrentContractList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractListBySearchList">
+            <soap12:operation soapAction="urn:getCurrentContractListBySearchList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ContractInfoPSHttpBinding" type="ns:ContractInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getCurrentPropositionAndContractList">
+            <http:operation location="getCurrentPropositionAndContractList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentPrepaidContractList">
+            <http:operation location="getCurrentPrepaidContractList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractList">
+            <http:operation location="getCurrentContractList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrentContractListBySearchList">
+            <http:operation location="getCurrentContractListBySearchList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ContractInfoPS">
+        <wsdl:port name="ContractInfoPSHttpSoap11Endpoint" binding="ns:ContractInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/ContractInfoPS.ContractInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ContractInfoPSHttpSoap12Endpoint" binding="ns:ContractInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/ContractInfoPS.ContractInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ContractInfoPSHttpEndpoint" binding="ns:ContractInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/ContractInfoPS.ContractInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

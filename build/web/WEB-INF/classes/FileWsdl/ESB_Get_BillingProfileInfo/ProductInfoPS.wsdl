@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:ax299="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax292="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax294="http://product.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax295="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax291="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax297="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax298="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2100="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://product.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="ProductSummaryList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productSummaryInfoArray" nillable="true" type="ax294:ProductSummaryInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProductSummaryInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="account" nillable="true" type="ax297:AccountSummary"/>
+                    <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="company" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="customer" nillable="true" type="ax297:CustomerSummary"/>
+                    <xs:element minOccurs="0" name="ou" nillable="true" type="ax299:OUSummary"/>
+                    <xs:element minOccurs="0" name="subscriber" nillable="true" type="ax294:SubscriberSummary"/>
+                    <xs:element minOccurs="0" name="system" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberSummary">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="barringByRequestActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="barringByRequestIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitAtSubStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax298:NameInfo"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax294:SubscriberStatusInfo"/>
+                    <xs:element minOccurs="0" name="subscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subscriberType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberStatusInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="lastActivityPathId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusLastActivity" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusReasonDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="activatedLocation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax298:AddressInfo"/>
+                    <xs:element minOccurs="0" name="areaCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="barringByRequestIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="barringByRequestReasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="calculatedPaymentCategory" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chNodeId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="commissionVariant" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax298:ContactInfo"/>
+                    <xs:element minOccurs="0" name="convergenceCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="convergenceRunNo" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitAtSubStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax298:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dealer" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="imsiAliasName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="initialDealerCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="installationType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="multiSIMIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="multiSIMLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax298:NameInfo"/>
+                    <xs:element minOccurs="0" name="networkCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nextSubscriberChangedDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="nextSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="porting" nillable="true" type="ax294:SubscriberPortingInfo"/>
+                    <xs:element minOccurs="0" name="previousSubscriberChangedDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="previousSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="primResourceParamProductType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="proof" nillable="true" type="ax294:SubscriberProofInfo"/>
+                    <xs:element minOccurs="0" name="relatedSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="rfMigration" nillable="true" type="ax294:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="rmvMigration" nillable="true" type="ax294:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="smsIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="smsLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitPeriod" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax294:SubscriberStatusInfo"/>
+                    <xs:element minOccurs="0" name="subscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subscriberPassword" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subscriberType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subscriberTypeDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tmvMigration" nillable="true" type="ax294:SubscriberCompanyMigrationInfo"/>
+                    <xs:element minOccurs="0" name="trueLifeId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberPortingInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="donorOperator" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="donorZone" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="portIndicator" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="recipientOperator" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="recipientZone" nillable="true" type="ax298:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberProofInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dealerApp" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="proofDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="proofDocument" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberCompanyMigrationInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="activationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="HybridPrepaidInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bonusCredit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="dataCredit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="documentId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="hideLastDigitIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="internetUserId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="listedIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mainCredit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="mmsCredit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="newActSuccessTime" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="newActivityPathId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="newActivityReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="newActivityReasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="niceNumberIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="niceNumberReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="niceNumberWaiveIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="niceNumberWaiveReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="orderEntryNum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="portFromNpCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="portFromSpCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="portToNpCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="portToSpCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="portedOrNotIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="posIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postpaidSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="preSelectionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="promoCredit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="reqEndGracePeriod" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="reqStartGracePeriod" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="spMobileVas" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subStatusReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="temporaryIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="wpDqIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="wpElectronicMediaIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="wpId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="wpPrintedMediaIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="wpStatus" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProductList">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="subscriberInfoArray" nillable="true" type="ax294:SubscriberInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2102="http://response.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getProductSummaryBySubscriberOU">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="subscriberOU" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryBySubscriberOUResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryBySIM">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="SIM" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryBySIMResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByPrimResource">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="primResourceVal" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByPrimResourceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByIMEI">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="IMEI" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByIMEIResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByCustomerName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByCustomerNameResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByCertificate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByCertificateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByBanAllTypes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductSummaryByBanAllTypesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="subscriberId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getProductInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrepaidProfileInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="productId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrepaidProfileInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProfileInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllSubscriberListByOU">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllSubscriberListByOUResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveSuspendSubscriberListByOU">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveSuspendSubscriberListByOUResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductSummaryByCertificate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductSummaryByCertificateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductSummaryResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductListByOU">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ouId" type="xs:long"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductListByOUResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductListByBan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+                        <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getActiveOrSuspendProductListByBanResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2102:ProductListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="OUSummary">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CommitmentInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="period" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="term" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax296="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="AccountSummary">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="accountPriority" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="accountSubType" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax296:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax296:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="delinquent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="initiationReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax296:NameInfo"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerSummary">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="certificateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerType" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountCollection" nillable="true" type="ax295:AccountCollectionInfo"/>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="accountPriority" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="accountSubType" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax296:AddressInfo"/>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="arBalance" type="xs:double"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="ax295:BenInfo"/>
+                    <xs:element minOccurs="0" name="branchNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="collectionStatus" nillable="true" type="ax296:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="company" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax296:ContactInfo"/>
+                    <xs:element minOccurs="0" name="convergenceCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimit" nillable="true" type="ax295:AccountCreditLimitInfo"/>
+                    <xs:element minOccurs="0" name="creditStatus" nillable="true" type="ax296:StatusReasonInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="delinquent" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="initiationReason" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="legacyBan" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax296:NameInfo"/>
+                    <xs:element minOccurs="0" name="openDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="parentBan" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="withholdingTaxIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="withholdingTaxUpdateDate" nillable="true" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCollectionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="collectionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fullSuspensionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="punishmentLevels" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="suspensionReason" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BenInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bcBanId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="ben" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billMedia" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="consolidateIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccountCreditLimitInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="creditLimitReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="obligationCalculationFormula" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personalCreditLimit" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="temporaryCreditLimit" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="address" nillable="true" type="ax296:AddressInfo"/>
+                    <xs:element minOccurs="0" name="billCycleInfo" nillable="true" type="ax295:CustomerBillCycleInfo"/>
+                    <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateExpirationDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="certificateNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="certificateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" nillable="true" type="ax296:ContactInfo"/>
+                    <xs:element minOccurs="0" name="contactLanguage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditClass" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="creditLimitIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerGrading" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerType" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="dealer" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="educationLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="exernalId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="income" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="job" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="largeCustomerIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastActivityReasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="marketingChannel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="ax296:NameInfo"/>
+                    <xs:element minOccurs="0" name="nationality" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="occupation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="offerCurrency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="periodOfWork" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="personal" nillable="true" type="ax296:PersonalInfo"/>
+                    <xs:element minOccurs="0" name="registerDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="taxExemptionIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="timeInBusiness" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalProduct" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="trueCardGrading" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerBillCycleInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billCycle" nillable="true" type="ax296:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="changeCycleIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="changeCycleReqeustDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="changeCycleRequestStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="newBillCycle" nillable="true" type="xs:short"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StatusReasonInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="lastActivityDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="reasonCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reasonDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NameInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="branchName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="middleName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nameType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="organizationName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="storeId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tilte" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AddressInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="addressLine1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressLine4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="building" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="district" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="houseNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="moo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="roomNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sinceDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="soi" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="street" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subDistrict" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContactInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="homePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="officePhone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="officePhoneExt" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preferredContactNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="privatePhone" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PersonalInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accommodation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maritalStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maritalStatusDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2103="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2104="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax293="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:ax2101="http://product.datatypes.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://product.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://customer.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://ou.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="ProductSummaryResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax292:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="productSummaryList" nillable="true" type="ax2101:ProductSummaryList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ProductInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax292:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="subscriber" nillable="true" type="ax2101:SubscriberInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ProfileInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax292:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="account" nillable="true" type="ax2103:AccountInfo"/>
+                            <xs:element minOccurs="0" name="commitment" nillable="true" type="ax2104:CommitmentInfo"/>
+                            <xs:element minOccurs="0" name="customer" nillable="true" type="ax2103:CustomerInfo"/>
+                            <xs:element minOccurs="0" name="hybridPrepaid" nillable="true" type="ax2101:HybridPrepaidInfo"/>
+                            <xs:element minOccurs="0" name="priceplan" nillable="true" type="ax2101:OfferInfo"/>
+                            <xs:element minOccurs="0" name="subscriber" nillable="true" type="ax2101:SubscriberInfo"/>
+                            <xs:element minOccurs="0" name="system" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ProductListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax292:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="calculatedPageSize" type="xs:int"/>
+                            <xs:element minOccurs="0" name="productList" nillable="true" type="ax2101:ProductList"/>
+                            <xs:element minOccurs="0" name="totalSize" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getProductSummaryBySIMRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryBySIM"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryBySIMResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryBySIMResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAllSubscriberListByOURequest">
+        <wsdl:part name="parameters" element="ns:getAllSubscriberListByOU"/>
+    </wsdl:message>
+    <wsdl:message name="getAllSubscriberListByOUResponse">
+        <wsdl:part name="parameters" element="ns:getAllSubscriberListByOUResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveSuspendSubscriberListByOURequest">
+        <wsdl:part name="parameters" element="ns:getActiveSuspendSubscriberListByOU"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveSuspendSubscriberListByOUResponse">
+        <wsdl:part name="parameters" element="ns:getActiveSuspendSubscriberListByOUResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByIMEIRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByIMEI"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByIMEIResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByIMEIResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductListByBanRequest">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductListByBan"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductListByBanResponse">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductListByBanResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByCertificateRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByCertificate"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByCertificateResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByCertificateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryBySubscriberOURequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryBySubscriberOU"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryBySubscriberOUResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryBySubscriberOUResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductListByOURequest">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductListByOU"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductListByOUResponse">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductListByOUResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByPrimResourceRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByPrimResource"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByPrimResourceResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByPrimResourceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPrepaidProfileInfoRequest">
+        <wsdl:part name="parameters" element="ns:getPrepaidProfileInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getPrepaidProfileInfoResponse">
+        <wsdl:part name="parameters" element="ns:getPrepaidProfileInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByCustomerNameRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByCustomerName"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByCustomerNameResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByCustomerNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductSummaryByCertificateRequest">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductSummaryByCertificate"/>
+    </wsdl:message>
+    <wsdl:message name="getActiveOrSuspendProductSummaryByCertificateResponse">
+        <wsdl:part name="parameters" element="ns:getActiveOrSuspendProductSummaryByCertificateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductInfoRequest">
+        <wsdl:part name="parameters" element="ns:getProductInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getProductInfoResponse">
+        <wsdl:part name="parameters" element="ns:getProductInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByBanAllTypesRequest">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByBanAllTypes"/>
+    </wsdl:message>
+    <wsdl:message name="getProductSummaryByBanAllTypesResponse">
+        <wsdl:part name="parameters" element="ns:getProductSummaryByBanAllTypesResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ProductInfoPSPortType">
+        <wsdl:operation name="getProductSummaryBySIM">
+            <wsdl:input message="ns:getProductSummaryBySIMRequest" wsaw:Action="urn:getProductSummaryBySIM"/>
+            <wsdl:output message="ns:getProductSummaryBySIMResponse" wsaw:Action="urn:getProductSummaryBySIMResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllSubscriberListByOU">
+            <wsdl:input message="ns:getAllSubscriberListByOURequest" wsaw:Action="urn:getAllSubscriberListByOU"/>
+            <wsdl:output message="ns:getAllSubscriberListByOUResponse" wsaw:Action="urn:getAllSubscriberListByOUResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveSuspendSubscriberListByOU">
+            <wsdl:input message="ns:getActiveSuspendSubscriberListByOURequest" wsaw:Action="urn:getActiveSuspendSubscriberListByOU"/>
+            <wsdl:output message="ns:getActiveSuspendSubscriberListByOUResponse" wsaw:Action="urn:getActiveSuspendSubscriberListByOUResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByIMEI">
+            <wsdl:input message="ns:getProductSummaryByIMEIRequest" wsaw:Action="urn:getProductSummaryByIMEI"/>
+            <wsdl:output message="ns:getProductSummaryByIMEIResponse" wsaw:Action="urn:getProductSummaryByIMEIResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByBan">
+            <wsdl:input message="ns:getActiveOrSuspendProductListByBanRequest" wsaw:Action="urn:getActiveOrSuspendProductListByBan"/>
+            <wsdl:output message="ns:getActiveOrSuspendProductListByBanResponse" wsaw:Action="urn:getActiveOrSuspendProductListByBanResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCertificate">
+            <wsdl:input message="ns:getProductSummaryByCertificateRequest" wsaw:Action="urn:getProductSummaryByCertificate"/>
+            <wsdl:output message="ns:getProductSummaryByCertificateResponse" wsaw:Action="urn:getProductSummaryByCertificateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryBySubscriberOU">
+            <wsdl:input message="ns:getProductSummaryBySubscriberOURequest" wsaw:Action="urn:getProductSummaryBySubscriberOU"/>
+            <wsdl:output message="ns:getProductSummaryBySubscriberOUResponse" wsaw:Action="urn:getProductSummaryBySubscriberOUResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByOU">
+            <wsdl:input message="ns:getActiveOrSuspendProductListByOURequest" wsaw:Action="urn:getActiveOrSuspendProductListByOU"/>
+            <wsdl:output message="ns:getActiveOrSuspendProductListByOUResponse" wsaw:Action="urn:getActiveOrSuspendProductListByOUResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByPrimResource">
+            <wsdl:input message="ns:getProductSummaryByPrimResourceRequest" wsaw:Action="urn:getProductSummaryByPrimResource"/>
+            <wsdl:output message="ns:getProductSummaryByPrimResourceResponse" wsaw:Action="urn:getProductSummaryByPrimResourceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPrepaidProfileInfo">
+            <wsdl:input message="ns:getPrepaidProfileInfoRequest" wsaw:Action="urn:getPrepaidProfileInfo"/>
+            <wsdl:output message="ns:getPrepaidProfileInfoResponse" wsaw:Action="urn:getPrepaidProfileInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCustomerName">
+            <wsdl:input message="ns:getProductSummaryByCustomerNameRequest" wsaw:Action="urn:getProductSummaryByCustomerName"/>
+            <wsdl:output message="ns:getProductSummaryByCustomerNameResponse" wsaw:Action="urn:getProductSummaryByCustomerNameResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductSummaryByCertificate">
+            <wsdl:input message="ns:getActiveOrSuspendProductSummaryByCertificateRequest" wsaw:Action="urn:getActiveOrSuspendProductSummaryByCertificate"/>
+            <wsdl:output message="ns:getActiveOrSuspendProductSummaryByCertificateResponse" wsaw:Action="urn:getActiveOrSuspendProductSummaryByCertificateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductInfo">
+            <wsdl:input message="ns:getProductInfoRequest" wsaw:Action="urn:getProductInfo"/>
+            <wsdl:output message="ns:getProductInfoResponse" wsaw:Action="urn:getProductInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByBanAllTypes">
+            <wsdl:input message="ns:getProductSummaryByBanAllTypesRequest" wsaw:Action="urn:getProductSummaryByBanAllTypes"/>
+            <wsdl:output message="ns:getProductSummaryByBanAllTypesResponse" wsaw:Action="urn:getProductSummaryByBanAllTypesResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ProductInfoPSSoap11Binding" type="ns:ProductInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getProductSummaryBySIM">
+            <soap:operation soapAction="urn:getProductSummaryBySIM" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllSubscriberListByOU">
+            <soap:operation soapAction="urn:getAllSubscriberListByOU" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveSuspendSubscriberListByOU">
+            <soap:operation soapAction="urn:getActiveSuspendSubscriberListByOU" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByIMEI">
+            <soap:operation soapAction="urn:getProductSummaryByIMEI" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByBan">
+            <soap:operation soapAction="urn:getActiveOrSuspendProductListByBan" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCertificate">
+            <soap:operation soapAction="urn:getProductSummaryByCertificate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryBySubscriberOU">
+            <soap:operation soapAction="urn:getProductSummaryBySubscriberOU" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByOU">
+            <soap:operation soapAction="urn:getActiveOrSuspendProductListByOU" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByPrimResource">
+            <soap:operation soapAction="urn:getProductSummaryByPrimResource" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCustomerName">
+            <soap:operation soapAction="urn:getProductSummaryByCustomerName" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrepaidProfileInfo">
+            <soap:operation soapAction="urn:getPrepaidProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductSummaryByCertificate">
+            <soap:operation soapAction="urn:getActiveOrSuspendProductSummaryByCertificate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByBanAllTypes">
+            <soap:operation soapAction="urn:getProductSummaryByBanAllTypes" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductInfo">
+            <soap:operation soapAction="urn:getProductInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ProductInfoPSSoap12Binding" type="ns:ProductInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getProductSummaryBySIM">
+            <soap12:operation soapAction="urn:getProductSummaryBySIM" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllSubscriberListByOU">
+            <soap12:operation soapAction="urn:getAllSubscriberListByOU" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveSuspendSubscriberListByOU">
+            <soap12:operation soapAction="urn:getActiveSuspendSubscriberListByOU" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByIMEI">
+            <soap12:operation soapAction="urn:getProductSummaryByIMEI" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByBan">
+            <soap12:operation soapAction="urn:getActiveOrSuspendProductListByBan" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCertificate">
+            <soap12:operation soapAction="urn:getProductSummaryByCertificate" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryBySubscriberOU">
+            <soap12:operation soapAction="urn:getProductSummaryBySubscriberOU" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByOU">
+            <soap12:operation soapAction="urn:getActiveOrSuspendProductListByOU" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByPrimResource">
+            <soap12:operation soapAction="urn:getProductSummaryByPrimResource" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCustomerName">
+            <soap12:operation soapAction="urn:getProductSummaryByCustomerName" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrepaidProfileInfo">
+            <soap12:operation soapAction="urn:getPrepaidProfileInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductSummaryByCertificate">
+            <soap12:operation soapAction="urn:getActiveOrSuspendProductSummaryByCertificate" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByBanAllTypes">
+            <soap12:operation soapAction="urn:getProductSummaryByBanAllTypes" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductInfo">
+            <soap12:operation soapAction="urn:getProductInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ProductInfoPSHttpBinding" type="ns:ProductInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getProductSummaryBySIM">
+            <http:operation location="getProductSummaryBySIM"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllSubscriberListByOU">
+            <http:operation location="getAllSubscriberListByOU"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveSuspendSubscriberListByOU">
+            <http:operation location="getActiveSuspendSubscriberListByOU"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByIMEI">
+            <http:operation location="getProductSummaryByIMEI"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByBan">
+            <http:operation location="getActiveOrSuspendProductListByBan"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCertificate">
+            <http:operation location="getProductSummaryByCertificate"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryBySubscriberOU">
+            <http:operation location="getProductSummaryBySubscriberOU"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductListByOU">
+            <http:operation location="getActiveOrSuspendProductListByOU"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByPrimResource">
+            <http:operation location="getProductSummaryByPrimResource"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByCustomerName">
+            <http:operation location="getProductSummaryByCustomerName"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrepaidProfileInfo">
+            <http:operation location="getPrepaidProfileInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActiveOrSuspendProductSummaryByCertificate">
+            <http:operation location="getActiveOrSuspendProductSummaryByCertificate"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductSummaryByBanAllTypes">
+            <http:operation location="getProductSummaryByBanAllTypes"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductInfo">
+            <http:operation location="getProductInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ProductInfoPS">
+        <wsdl:port name="ProductInfoPSHttpSoap11Endpoint" binding="ns:ProductInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/ProductInfoPS.ProductInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ProductInfoPSHttpSoap12Endpoint" binding="ns:ProductInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/ProductInfoPS.ProductInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ProductInfoPSHttpEndpoint" binding="ns:ProductInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/ProductInfoPS.ProductInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

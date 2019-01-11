@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax286="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax283="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax284="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax288="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax290="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getSplitRuleList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="splitCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSplitRuleListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:SplitRuleInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSplitPeriodList">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSplitPeriodListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:GenericCodeListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPricePlanList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="businessLine" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPricePlanListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:AdditionalOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPoolingPooledRelationList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="offerCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPoolingPooledRelationListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:PoolRelationListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOfferDetailList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax284:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOfferDetailListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:OfferDetailListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOfferDetail">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="offerCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOfferDetailResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:OfferDetailInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOTCRoamingOfferList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getOTCRoamingOfferListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:RoamingOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIRList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIRListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:BaseOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIDDList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIDDListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:BaseOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDiscountList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDiscountListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:BaseOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getContractList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getContractListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:ContractOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getContractDetail">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax284:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getContractDetailResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:ContractDetailListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCapMaxParameterList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="offerCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCapMaxParameterListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:CapMaxParameterListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAdditionalOfferList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="entityType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="agreementType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAdditionalOfferListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax288:AdditionalOfferListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax284:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax289="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="SplitRuleList">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="splitRuleInfoArray" nillable="true" type="ax286:SplitRuleInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SplitRuleInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="exceedInd" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="includeInd" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="quantity" type="xs:float"/>
+                    <xs:element minOccurs="0" name="splitCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="splitExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="splitLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="splitWay" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="workInd" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GenericCodeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="genericCodeInfoArray" nillable="true" type="ax286:GenericCodeInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GenericCodeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AdditionalOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="additionalOfferInfoArray" nillable="true" type="ax286:AdditionalOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="durationUOM" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="properties" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="saleEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="saleExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax289:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AdditionalOfferInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax286:BaseOfferInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="specialOfferType" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PoolRelationList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="poolRelationInfoArray" nillable="true" type="ax286:PoolRelationInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PoolRelationInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="allowanceRelationType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pooledOfferId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="poolingOfferInfo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="relationType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="saleEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="saleExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax289:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferDetailList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="offerDetailInfoArray" nillable="true" type="ax286:OfferDetailInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferDetailInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billDescription" nillable="true" type="ax286:BillDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deployFromGroupIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="durationCalculationLevel" nillable="true" type="ax289:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="durationUOM" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maxInstancesAllowed" nillable="true" type="ax289:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="properties" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcRate" type="xs:double"/>
+                    <xs:element minOccurs="0" name="saleContext" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="saleEffectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="saleExpirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax289:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="specialOfferType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="englishLine1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="englishLine2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="englishLine3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="thaiLine1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="thaiLine2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="thaiLine3" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferReferenceInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offerDetailInfo" nillable="true" type="ax286:OfferDetailInfo"/>
+                    <xs:element minOccurs="0" name="offerItemList" nillable="true" type="ax286:OfferItemList"/>
+                    <xs:element minOccurs="0" name="offerParamList" nillable="true" type="ax286:OfferParamList"/>
+                    <xs:element minOccurs="0" name="offerRelatedList" nillable="true" type="ax286:OfferRelatedList"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferItemList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="offerItemInfoArray" nillable="true" type="ax286:OfferItemInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferItemInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="barring" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="distributableIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemProperties" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="packageCd" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="piMgmtPlatform" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primaryIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="revenueCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="routingCategoryIds" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferParamList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="offerParamInfoArray" nillable="true" type="ax286:OfferParamInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferParamInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="baseIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="displayIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="guidingIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mandatoryIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="maxNumValues" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="minNumValues" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramCategory" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramInstanceLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramOrder" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramProperties" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="paramValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="populateLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sendToProvision" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="transientIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validValuesArray" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferRelatedList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="offerRelatedInfoArray" nillable="true" type="ax286:OfferRelatedInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferRelatedInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax286:OfferDetailInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="relationType" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="selectdByDefault" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RoamingOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="roamingOfferInfoArray" nillable="true" type="ax286:RoamingOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RoamingOfferInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax286:BaseOfferInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="specialOfferType" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="BaseOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="baseOfferInfoArray" nillable="true" type="ax286:BaseOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContractOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="contractOfferInfoArray" nillable="true" type="ax286:ContractOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ContractOfferInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax286:BaseOfferInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="fee" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="term" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ContractDetailInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="agreementTypeArray" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contractReferenceInfo" nillable="true" type="ax286:OfferReferenceInfo"/>
+                    <xs:element minOccurs="0" name="penaltyContractIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="penaltyContractList" nillable="true" type="ax286:PenaltyContractDetailList"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PenaltyContractDetailList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="penaltyContractDetailArray" nillable="true" type="ax286:PenaltyContractDetailInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PenaltyContractDetailInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="allowChangePp" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="allowRemainBucket" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bucket" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="campaign" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chargeCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ppCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ppName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="propoCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="propoName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="resourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="resourceTypeDesc" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax287="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax285="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://offerref.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="SplitRuleInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="splitRuleList" nillable="true" type="ax287:SplitRuleList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GenericCodeListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="genericCodeList" nillable="true" type="ax287:GenericCodeList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AdditionalOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="additionalOfferList" nillable="true" type="ax287:AdditionalOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PoolRelationListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="poolRelationList" nillable="true" type="ax287:PoolRelationList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="OfferDetailListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="offerDetailList" nillable="true" type="ax287:OfferDetailList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="OfferDetailInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="offerReferenceInfo" nillable="true" type="ax287:OfferReferenceInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RoamingOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="roamingOfferList" nillable="true" type="ax287:RoamingOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="BaseOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="baseOfferList" nillable="true" type="ax287:BaseOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ContractOfferListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="contractOfferList" nillable="true" type="ax287:ContractOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ContractDetailListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="contractDetailInfo" nillable="true" type="ax287:ContractDetailInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CapMaxParameterListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax285:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="capMaxParameterList" nillable="true" type="ax287:OfferParamList"/>
+                            <xs:element minOccurs="0" name="capMaxUOMParameterList" nillable="true" type="ax287:OfferParamList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getIDDListRequest">
+        <wsdl:part name="parameters" element="ns:getIDDList"/>
+    </wsdl:message>
+    <wsdl:message name="getIDDListResponse">
+        <wsdl:part name="parameters" element="ns:getIDDListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCapMaxParameterListRequest">
+        <wsdl:part name="parameters" element="ns:getCapMaxParameterList"/>
+    </wsdl:message>
+    <wsdl:message name="getCapMaxParameterListResponse">
+        <wsdl:part name="parameters" element="ns:getCapMaxParameterListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getOfferDetailRequest">
+        <wsdl:part name="parameters" element="ns:getOfferDetail"/>
+    </wsdl:message>
+    <wsdl:message name="getOfferDetailResponse">
+        <wsdl:part name="parameters" element="ns:getOfferDetailResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getIRListRequest">
+        <wsdl:part name="parameters" element="ns:getIRList"/>
+    </wsdl:message>
+    <wsdl:message name="getIRListResponse">
+        <wsdl:part name="parameters" element="ns:getIRListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSplitPeriodListRequest">
+        <wsdl:part name="parameters" element="ns:getSplitPeriodList"/>
+    </wsdl:message>
+    <wsdl:message name="getSplitPeriodListResponse">
+        <wsdl:part name="parameters" element="ns:getSplitPeriodListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getDiscountListRequest">
+        <wsdl:part name="parameters" element="ns:getDiscountList"/>
+    </wsdl:message>
+    <wsdl:message name="getDiscountListResponse">
+        <wsdl:part name="parameters" element="ns:getDiscountListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getOTCRoamingOfferListRequest">
+        <wsdl:part name="parameters" element="ns:getOTCRoamingOfferList"/>
+    </wsdl:message>
+    <wsdl:message name="getOTCRoamingOfferListResponse">
+        <wsdl:part name="parameters" element="ns:getOTCRoamingOfferListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getContractDetailRequest">
+        <wsdl:part name="parameters" element="ns:getContractDetail"/>
+    </wsdl:message>
+    <wsdl:message name="getContractDetailResponse">
+        <wsdl:part name="parameters" element="ns:getContractDetailResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSplitRuleListRequest">
+        <wsdl:part name="parameters" element="ns:getSplitRuleList"/>
+    </wsdl:message>
+    <wsdl:message name="getSplitRuleListResponse">
+        <wsdl:part name="parameters" element="ns:getSplitRuleListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getOfferDetailListRequest">
+        <wsdl:part name="parameters" element="ns:getOfferDetailList"/>
+    </wsdl:message>
+    <wsdl:message name="getOfferDetailListResponse">
+        <wsdl:part name="parameters" element="ns:getOfferDetailListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPoolingPooledRelationListRequest">
+        <wsdl:part name="parameters" element="ns:getPoolingPooledRelationList"/>
+    </wsdl:message>
+    <wsdl:message name="getPoolingPooledRelationListResponse">
+        <wsdl:part name="parameters" element="ns:getPoolingPooledRelationListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPricePlanListRequest">
+        <wsdl:part name="parameters" element="ns:getPricePlanList"/>
+    </wsdl:message>
+    <wsdl:message name="getPricePlanListResponse">
+        <wsdl:part name="parameters" element="ns:getPricePlanListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getContractListRequest">
+        <wsdl:part name="parameters" element="ns:getContractList"/>
+    </wsdl:message>
+    <wsdl:message name="getContractListResponse">
+        <wsdl:part name="parameters" element="ns:getContractListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAdditionalOfferListRequest">
+        <wsdl:part name="parameters" element="ns:getAdditionalOfferList"/>
+    </wsdl:message>
+    <wsdl:message name="getAdditionalOfferListResponse">
+        <wsdl:part name="parameters" element="ns:getAdditionalOfferListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="OfferReferenceInfoPSPortType">
+        <wsdl:operation name="getIDDList">
+            <wsdl:input message="ns:getIDDListRequest" wsaw:Action="urn:getIDDList"/>
+            <wsdl:output message="ns:getIDDListResponse" wsaw:Action="urn:getIDDListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCapMaxParameterList">
+            <wsdl:input message="ns:getCapMaxParameterListRequest" wsaw:Action="urn:getCapMaxParameterList"/>
+            <wsdl:output message="ns:getCapMaxParameterListResponse" wsaw:Action="urn:getCapMaxParameterListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetail">
+            <wsdl:input message="ns:getOfferDetailRequest" wsaw:Action="urn:getOfferDetail"/>
+            <wsdl:output message="ns:getOfferDetailResponse" wsaw:Action="urn:getOfferDetailResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getIRList">
+            <wsdl:input message="ns:getIRListRequest" wsaw:Action="urn:getIRList"/>
+            <wsdl:output message="ns:getIRListResponse" wsaw:Action="urn:getIRListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitPeriodList">
+            <wsdl:input message="ns:getSplitPeriodListRequest" wsaw:Action="urn:getSplitPeriodList"/>
+            <wsdl:output message="ns:getSplitPeriodListResponse" wsaw:Action="urn:getSplitPeriodListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDiscountList">
+            <wsdl:input message="ns:getDiscountListRequest" wsaw:Action="urn:getDiscountList"/>
+            <wsdl:output message="ns:getDiscountListResponse" wsaw:Action="urn:getDiscountListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOTCRoamingOfferList">
+            <wsdl:input message="ns:getOTCRoamingOfferListRequest" wsaw:Action="urn:getOTCRoamingOfferList"/>
+            <wsdl:output message="ns:getOTCRoamingOfferListResponse" wsaw:Action="urn:getOTCRoamingOfferListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getContractDetail">
+            <wsdl:input message="ns:getContractDetailRequest" wsaw:Action="urn:getContractDetail"/>
+            <wsdl:output message="ns:getContractDetailResponse" wsaw:Action="urn:getContractDetailResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitRuleList">
+            <wsdl:input message="ns:getSplitRuleListRequest" wsaw:Action="urn:getSplitRuleList"/>
+            <wsdl:output message="ns:getSplitRuleListResponse" wsaw:Action="urn:getSplitRuleListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetailList">
+            <wsdl:input message="ns:getOfferDetailListRequest" wsaw:Action="urn:getOfferDetailList"/>
+            <wsdl:output message="ns:getOfferDetailListResponse" wsaw:Action="urn:getOfferDetailListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolingPooledRelationList">
+            <wsdl:input message="ns:getPoolingPooledRelationListRequest" wsaw:Action="urn:getPoolingPooledRelationList"/>
+            <wsdl:output message="ns:getPoolingPooledRelationListResponse" wsaw:Action="urn:getPoolingPooledRelationListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPricePlanList">
+            <wsdl:input message="ns:getPricePlanListRequest" wsaw:Action="urn:getPricePlanList"/>
+            <wsdl:output message="ns:getPricePlanListResponse" wsaw:Action="urn:getPricePlanListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getContractList">
+            <wsdl:input message="ns:getContractListRequest" wsaw:Action="urn:getContractList"/>
+            <wsdl:output message="ns:getContractListResponse" wsaw:Action="urn:getContractListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAdditionalOfferList">
+            <wsdl:input message="ns:getAdditionalOfferListRequest" wsaw:Action="urn:getAdditionalOfferList"/>
+            <wsdl:output message="ns:getAdditionalOfferListResponse" wsaw:Action="urn:getAdditionalOfferListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="OfferReferenceInfoPSSoap11Binding" type="ns:OfferReferenceInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getIDDList">
+            <soap:operation soapAction="urn:getIDDList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCapMaxParameterList">
+            <soap:operation soapAction="urn:getCapMaxParameterList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetail">
+            <soap:operation soapAction="urn:getOfferDetail" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIRList">
+            <soap:operation soapAction="urn:getIRList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitPeriodList">
+            <soap:operation soapAction="urn:getSplitPeriodList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOTCRoamingOfferList">
+            <soap:operation soapAction="urn:getOTCRoamingOfferList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDiscountList">
+            <soap:operation soapAction="urn:getDiscountList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitRuleList">
+            <soap:operation soapAction="urn:getSplitRuleList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractDetail">
+            <soap:operation soapAction="urn:getContractDetail" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolingPooledRelationList">
+            <soap:operation soapAction="urn:getPoolingPooledRelationList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetailList">
+            <soap:operation soapAction="urn:getOfferDetailList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPricePlanList">
+            <soap:operation soapAction="urn:getPricePlanList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractList">
+            <soap:operation soapAction="urn:getContractList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAdditionalOfferList">
+            <soap:operation soapAction="urn:getAdditionalOfferList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="OfferReferenceInfoPSSoap12Binding" type="ns:OfferReferenceInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getIDDList">
+            <soap12:operation soapAction="urn:getIDDList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCapMaxParameterList">
+            <soap12:operation soapAction="urn:getCapMaxParameterList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetail">
+            <soap12:operation soapAction="urn:getOfferDetail" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIRList">
+            <soap12:operation soapAction="urn:getIRList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitPeriodList">
+            <soap12:operation soapAction="urn:getSplitPeriodList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOTCRoamingOfferList">
+            <soap12:operation soapAction="urn:getOTCRoamingOfferList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDiscountList">
+            <soap12:operation soapAction="urn:getDiscountList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitRuleList">
+            <soap12:operation soapAction="urn:getSplitRuleList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractDetail">
+            <soap12:operation soapAction="urn:getContractDetail" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolingPooledRelationList">
+            <soap12:operation soapAction="urn:getPoolingPooledRelationList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetailList">
+            <soap12:operation soapAction="urn:getOfferDetailList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPricePlanList">
+            <soap12:operation soapAction="urn:getPricePlanList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractList">
+            <soap12:operation soapAction="urn:getContractList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAdditionalOfferList">
+            <soap12:operation soapAction="urn:getAdditionalOfferList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="OfferReferenceInfoPSHttpBinding" type="ns:OfferReferenceInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getIDDList">
+            <http:operation location="getIDDList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCapMaxParameterList">
+            <http:operation location="getCapMaxParameterList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetail">
+            <http:operation location="getOfferDetail"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIRList">
+            <http:operation location="getIRList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitPeriodList">
+            <http:operation location="getSplitPeriodList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOTCRoamingOfferList">
+            <http:operation location="getOTCRoamingOfferList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDiscountList">
+            <http:operation location="getDiscountList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSplitRuleList">
+            <http:operation location="getSplitRuleList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractDetail">
+            <http:operation location="getContractDetail"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPoolingPooledRelationList">
+            <http:operation location="getPoolingPooledRelationList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOfferDetailList">
+            <http:operation location="getOfferDetailList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPricePlanList">
+            <http:operation location="getPricePlanList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractList">
+            <http:operation location="getContractList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAdditionalOfferList">
+            <http:operation location="getAdditionalOfferList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="OfferReferenceInfoPS">
+        <wsdl:port name="OfferReferenceInfoPSHttpSoap11Endpoint" binding="ns:OfferReferenceInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8080/WSDLGenerator/services/OfferReferenceInfoPS.OfferReferenceInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="OfferReferenceInfoPSHttpSoap12Endpoint" binding="ns:OfferReferenceInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8080/WSDLGenerator/services/OfferReferenceInfoPS.OfferReferenceInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="OfferReferenceInfoPSHttpEndpoint" binding="ns:OfferReferenceInfoPSHttpBinding">
+            <http:address location="http://localhost:8080/WSDLGenerator/services/OfferReferenceInfoPS.OfferReferenceInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

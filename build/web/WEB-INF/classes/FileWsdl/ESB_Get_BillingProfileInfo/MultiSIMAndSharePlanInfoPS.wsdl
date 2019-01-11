@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax258="http://shareplanmultisim.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax256="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax254="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax261="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax255="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getMasterMinorSIMInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax255:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getMasterMinorSIMInfoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:MasterMinorSIMInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSharePlanList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax255:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSharePlanListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:SharePlanListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCancelledSIMWithResumeList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchList" nillable="true" type="ax255:SearchList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCancelledSIMWithResumeListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:MultiSimListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="SearchList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="searchInfoArray" nillable="true" type="ax254:SearchInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SearchInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CodeDescriptionInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax260="http://shareplanmultisim.datatypes.interfaces.cdm.ei.tit.com/xsd" xmlns:ax257="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:import namespace="http://shareplanmultisim.datatypes.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="MasterMinorSIMInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax257:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="master" nillable="true" type="ax260:SIMAndOfferInfo"/>
+                            <xs:element minOccurs="0" name="minorList" nillable="true" type="ax260:MultiSIMList"/>
+                            <xs:element minOccurs="0" name="rcAgreementList" nillable="true" type="ax260:AgreementOfferList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SharePlanListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax257:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="sharePlanList" nillable="true" type="ax260:SharePlanList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="MultiSimListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax257:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="multiSimList" nillable="true" type="ax260:MultiSIMList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax259="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://shareplanmultisim.datatypes.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="SIMAndOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="rcOfferIn" nillable="true" type="ax258:OfferInfo"/>
+                    <xs:element minOccurs="0" name="rcOfferOut" nillable="true" type="ax258:OfferInfo"/>
+                    <xs:element minOccurs="0" name="resourceInfo" nillable="true" type="ax258:ResourceInfo"/>
+                    <xs:element minOccurs="0" name="resourceOfferInfo" nillable="true" type="ax258:AgreementOfferInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cugIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ffIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="iddIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="irIndicator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mutiSIMPropertyValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcRate" type="xs:double"/>
+                    <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="ax259:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="socType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResourceInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="EID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ICCID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IMEI" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IMSI" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MATCHID" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="aliasName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="simStatus" nillable="true" type="ax259:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="simStatusDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementOfferInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="offer" nillable="true" type="ax258:OfferInfo"/>
+                    <xs:element minOccurs="0" name="serviceAgreement" nillable="true" type="ax258:ServiceAgreementInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ServiceAgreementInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="agreementId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="agreementSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="effectiveDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="effectiveIssueDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="expirationIssueDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="parentSocSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="socSequence" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="status" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MultiSIMList">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="eSimResourceOfferInfoList" nillable="true" type="ax258:SIMAndOfferList"/>
+                    <xs:element minOccurs="0" name="mutiSimResourceOfferInfoList" nillable="true" type="ax258:SIMAndOfferList"/>
+                    <xs:element minOccurs="0" name="totalMinor" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SIMAndOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="SIMAndOfferInfoArray" nillable="true" type="ax258:SIMAndOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AgreementOfferList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="agreementOfferArray" nillable="true" type="ax258:AgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SharePlanList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="sharePlanInfoArray" nillable="true" type="ax258:SharePlanInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SharePlanInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="classify" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="company" nillable="true" type="ax259:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="installationType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pricePlanAgreementInfo" nillable="true" type="ax258:AgreementOfferInfo"/>
+                    <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="relatedSubscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="simLevel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="subStatus" nillable="true" type="ax259:CodeDescriptionInfo"/>
+                    <xs:element minOccurs="0" name="subscriberId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="subscriberType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getSharePlanListRequest">
+        <wsdl:part name="parameters" element="ns:getSharePlanList"/>
+    </wsdl:message>
+    <wsdl:message name="getSharePlanListResponse">
+        <wsdl:part name="parameters" element="ns:getSharePlanListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getMasterMinorSIMInfoRequest">
+        <wsdl:part name="parameters" element="ns:getMasterMinorSIMInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getMasterMinorSIMInfoResponse">
+        <wsdl:part name="parameters" element="ns:getMasterMinorSIMInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCancelledSIMWithResumeListRequest">
+        <wsdl:part name="parameters" element="ns:getCancelledSIMWithResumeList"/>
+    </wsdl:message>
+    <wsdl:message name="getCancelledSIMWithResumeListResponse">
+        <wsdl:part name="parameters" element="ns:getCancelledSIMWithResumeListResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="MultiSIMAndSharePlanInfoPSPortType">
+        <wsdl:operation name="getSharePlanList">
+            <wsdl:input message="ns:getSharePlanListRequest" wsaw:Action="urn:getSharePlanList"/>
+            <wsdl:output message="ns:getSharePlanListResponse" wsaw:Action="urn:getSharePlanListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getMasterMinorSIMInfo">
+            <wsdl:input message="ns:getMasterMinorSIMInfoRequest" wsaw:Action="urn:getMasterMinorSIMInfo"/>
+            <wsdl:output message="ns:getMasterMinorSIMInfoResponse" wsaw:Action="urn:getMasterMinorSIMInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCancelledSIMWithResumeList">
+            <wsdl:input message="ns:getCancelledSIMWithResumeListRequest" wsaw:Action="urn:getCancelledSIMWithResumeList"/>
+            <wsdl:output message="ns:getCancelledSIMWithResumeListResponse" wsaw:Action="urn:getCancelledSIMWithResumeListResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MultiSIMAndSharePlanInfoPSSoap11Binding" type="ns:MultiSIMAndSharePlanInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getSharePlanList">
+            <soap:operation soapAction="urn:getSharePlanList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMasterMinorSIMInfo">
+            <soap:operation soapAction="urn:getMasterMinorSIMInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCancelledSIMWithResumeList">
+            <soap:operation soapAction="urn:getCancelledSIMWithResumeList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MultiSIMAndSharePlanInfoPSSoap12Binding" type="ns:MultiSIMAndSharePlanInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getSharePlanList">
+            <soap12:operation soapAction="urn:getSharePlanList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMasterMinorSIMInfo">
+            <soap12:operation soapAction="urn:getMasterMinorSIMInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCancelledSIMWithResumeList">
+            <soap12:operation soapAction="urn:getCancelledSIMWithResumeList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MultiSIMAndSharePlanInfoPSHttpBinding" type="ns:MultiSIMAndSharePlanInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getSharePlanList">
+            <http:operation location="getSharePlanList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMasterMinorSIMInfo">
+            <http:operation location="getMasterMinorSIMInfo"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCancelledSIMWithResumeList">
+            <http:operation location="getCancelledSIMWithResumeList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MultiSIMAndSharePlanInfoPS">
+        <wsdl:port name="MultiSIMAndSharePlanInfoPSHttpSoap11Endpoint" binding="ns:MultiSIMAndSharePlanInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/MultiSIMAndSharePlanInfoPS.MultiSIMAndSharePlanInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MultiSIMAndSharePlanInfoPSHttpSoap12Endpoint" binding="ns:MultiSIMAndSharePlanInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/MultiSIMAndSharePlanInfoPS.MultiSIMAndSharePlanInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MultiSIMAndSharePlanInfoPSHttpEndpoint" binding="ns:MultiSIMAndSharePlanInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/MultiSIMAndSharePlanInfoPS.MultiSIMAndSharePlanInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

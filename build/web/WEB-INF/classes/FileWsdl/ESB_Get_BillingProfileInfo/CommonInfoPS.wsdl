@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://api.interfaces.cdm.ei.tit.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://response.interfaces.cdm.ei.tit.com/xsd" xmlns:ax22="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax24="http://response.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.interfaces.cdm.ei.tit.com">
+            <xs:import namespace="http://response.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:element name="getPrimaryKeyListWithoutResourceType">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListWithoutResourceTypeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax24:PrimaryKeyListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListByPrimResourceValue">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListByPrimResourceValueResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax24:PrimaryKeyListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListByActiveOrSuspend">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListByActiveOrSuspendResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax24:PrimaryKeyListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="accountId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyListResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax24:PrimaryKeyListResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyInfoByActiveOrSuspend">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="primResourceType" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="primResourceValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPrimaryKeyInfoByActiveOrSuspendResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax24:PrimaryKeyInfoResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd">
+            <xs:complexType name="ResponseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PrimaryKeyList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="primaryKeyInfoArray" nillable="true" type="ax22:PrimaryKeyInfo"/>
+                    <xs:element minOccurs="0" name="size" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PrimaryKeyInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="accountSubType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="agreementIdOfOU" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="agreementIdOfRootOU" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ouId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="primaryResourceType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="primaryResourceValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="productId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="productStatus" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rootOUId" nillable="true" type="xs:long"/>
+                    <xs:element minOccurs="0" name="system" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax23="http://common.datatype.interfaces.cdm.ei.tit.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.interfaces.cdm.ei.tit.com/xsd">
+            <xs:import namespace="http://common.datatype.interfaces.cdm.ei.tit.com/xsd"/>
+            <xs:complexType name="PrimaryKeyListResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax23:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="primaryKeyList" nillable="true" type="ax23:PrimaryKeyList"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PrimaryKeyInfoResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax23:ResponseInfo">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="primaryKeyInfo" nillable="true" type="ax23:PrimaryKeyInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getPrimaryKeyInfoByActiveOrSuspendRequest">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyInfoByActiveOrSuspend"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyInfoByActiveOrSuspendResponse">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyInfoByActiveOrSuspendResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListByActiveOrSuspendRequest">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListByActiveOrSuspend"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListByActiveOrSuspendResponse">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListByActiveOrSuspendResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListRequest">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyList"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListResponse">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListByPrimResourceValueRequest">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListByPrimResourceValue"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListByPrimResourceValueResponse">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListByPrimResourceValueResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListWithoutResourceTypeRequest">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListWithoutResourceType"/>
+    </wsdl:message>
+    <wsdl:message name="getPrimaryKeyListWithoutResourceTypeResponse">
+        <wsdl:part name="parameters" element="ns:getPrimaryKeyListWithoutResourceTypeResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CommonInfoPSPortType">
+        <wsdl:operation name="getPrimaryKeyInfoByActiveOrSuspend">
+            <wsdl:input message="ns:getPrimaryKeyInfoByActiveOrSuspendRequest" wsaw:Action="urn:getPrimaryKeyInfoByActiveOrSuspend"/>
+            <wsdl:output message="ns:getPrimaryKeyInfoByActiveOrSuspendResponse" wsaw:Action="urn:getPrimaryKeyInfoByActiveOrSuspendResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByActiveOrSuspend">
+            <wsdl:input message="ns:getPrimaryKeyListByActiveOrSuspendRequest" wsaw:Action="urn:getPrimaryKeyListByActiveOrSuspend"/>
+            <wsdl:output message="ns:getPrimaryKeyListByActiveOrSuspendResponse" wsaw:Action="urn:getPrimaryKeyListByActiveOrSuspendResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyList">
+            <wsdl:input message="ns:getPrimaryKeyListRequest" wsaw:Action="urn:getPrimaryKeyList"/>
+            <wsdl:output message="ns:getPrimaryKeyListResponse" wsaw:Action="urn:getPrimaryKeyListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByPrimResourceValue">
+            <wsdl:input message="ns:getPrimaryKeyListByPrimResourceValueRequest" wsaw:Action="urn:getPrimaryKeyListByPrimResourceValue"/>
+            <wsdl:output message="ns:getPrimaryKeyListByPrimResourceValueResponse" wsaw:Action="urn:getPrimaryKeyListByPrimResourceValueResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListWithoutResourceType">
+            <wsdl:input message="ns:getPrimaryKeyListWithoutResourceTypeRequest" wsaw:Action="urn:getPrimaryKeyListWithoutResourceType"/>
+            <wsdl:output message="ns:getPrimaryKeyListWithoutResourceTypeResponse" wsaw:Action="urn:getPrimaryKeyListWithoutResourceTypeResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CommonInfoPSSoap11Binding" type="ns:CommonInfoPSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getPrimaryKeyInfoByActiveOrSuspend">
+            <soap:operation soapAction="urn:getPrimaryKeyInfoByActiveOrSuspend" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyList">
+            <soap:operation soapAction="urn:getPrimaryKeyList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByActiveOrSuspend">
+            <soap:operation soapAction="urn:getPrimaryKeyListByActiveOrSuspend" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByPrimResourceValue">
+            <soap:operation soapAction="urn:getPrimaryKeyListByPrimResourceValue" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListWithoutResourceType">
+            <soap:operation soapAction="urn:getPrimaryKeyListWithoutResourceType" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CommonInfoPSSoap12Binding" type="ns:CommonInfoPSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getPrimaryKeyInfoByActiveOrSuspend">
+            <soap12:operation soapAction="urn:getPrimaryKeyInfoByActiveOrSuspend" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyList">
+            <soap12:operation soapAction="urn:getPrimaryKeyList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByActiveOrSuspend">
+            <soap12:operation soapAction="urn:getPrimaryKeyListByActiveOrSuspend" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByPrimResourceValue">
+            <soap12:operation soapAction="urn:getPrimaryKeyListByPrimResourceValue" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListWithoutResourceType">
+            <soap12:operation soapAction="urn:getPrimaryKeyListWithoutResourceType" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CommonInfoPSHttpBinding" type="ns:CommonInfoPSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getPrimaryKeyInfoByActiveOrSuspend">
+            <http:operation location="getPrimaryKeyInfoByActiveOrSuspend"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyList">
+            <http:operation location="getPrimaryKeyList"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByActiveOrSuspend">
+            <http:operation location="getPrimaryKeyListByActiveOrSuspend"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListByPrimResourceValue">
+            <http:operation location="getPrimaryKeyListByPrimResourceValue"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPrimaryKeyListWithoutResourceType">
+            <http:operation location="getPrimaryKeyListWithoutResourceType"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CommonInfoPS">
+        <wsdl:port name="CommonInfoPSHttpSoap11Endpoint" binding="ns:CommonInfoPSSoap11Binding">
+            <soap:address location="http://localhost:8180/WSDLGenerator/services/CommonInfoPS.CommonInfoPSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CommonInfoPSHttpSoap12Endpoint" binding="ns:CommonInfoPSSoap12Binding">
+            <soap12:address location="http://localhost:8180/WSDLGenerator/services/CommonInfoPS.CommonInfoPSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CommonInfoPSHttpEndpoint" binding="ns:CommonInfoPSHttpBinding">
+            <http:address location="http://localhost:8180/WSDLGenerator/services/CommonInfoPS.CommonInfoPSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
